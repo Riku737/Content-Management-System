@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" media="all" href="../stylesheets/staff.css"/>
-        <title>Images Source</title>
-    </head>
-    <body>
-        
-        <header>
-            <h1>Staff Area</h1>
-        </header>
+<?php require_once('../../private/initialize.php');?>
 
-        <navigation>
-            <ul>
-                <li><a href="index.php">Menu</a></li>
-            </ul>
-        </navigation>
+<?php $page_title = 'Staff Menu';?>
 
-        <footer>
-            &copy; <?php echo date('Y'); ?> 2025 Website
-        </footer>
+<?php include(SHARED_PATH . '/staff_header.php');?>
 
-    </body>
-</html>
+<div id="content">
+    
+</div>
+
+<?php include(SHARED_PATH . '/staff_footer.php');?>
