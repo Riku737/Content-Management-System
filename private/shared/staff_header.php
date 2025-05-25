@@ -8,17 +8,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" media="all" href="../stylesheets/staff.css"/>
+        <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css')?>"/>
         <title>Admin - <?php echo $page_title; ?></title>
     </head>
     <body>
-        
-        <header>
-            <h1>Staff Area</h1>
-        </header>
 
-        <navigation>
-            <ul>
-                <li><a href="index.php">Menu</a></li>
-            </ul>
-        </navigation>
+        <div class="navigation_bar">
+            <div class="navigation_left">
+                <h3>Pokémon Index</h3>
+            </div>
+            <div class="navigation_right">
+                <a class="button_menu" href="index.php">Logout</a>
+                <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>
+            </div>
+        </div>

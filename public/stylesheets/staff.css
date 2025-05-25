@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global variables */
+:root {
+    --main_color: #2f02fc;
+    --main_color_light: #e7e5ef;
+    --border_color: #d9d9d9;
+}
+
+
+/* All */
+* {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Navigation */
+.navigation_bar {
+    padding: 16px 100px;
+    background-color: var(--main_color);
+    color: white;
+    display: flex;
+}
+
+.navigation_left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.navigation_right {
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 33px;
+}
+
+.button_menu {
+    background-color: white;
+    border-radius: 100px;
+    padding: 8px 22px;
+    text-decoration: none;
+    color: black;
+}
+
+.button_primary {
+    background-color: var(--main_color);
+    border-radius: 100px;
+    padding: 8px 22px;
+    text-decoration: none;
+    color: white;
+}
+
+.link_menu {
+    border-radius: 100px;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Staff */
+.section_hero {
+    background-color: var(--main_color_light);
+    padding: 33px 100px;
+}
+
+.container_link {
+    display: flex;
+    gap: 16px;
+}
+
+.item_link {
+    width: 100%;
+    background-color: white;
+    border-radius: 16px;
+    padding: 33px;
+}
+
+.item_link p {
+    margin-bottom: 16px;
+}
+
+.section_hero h1 {
+    margin-bottom: 16px;
+}
