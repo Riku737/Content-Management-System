@@ -11,7 +11,7 @@
         <div class="item_link">
             <h2>Subjects</h2>
             <p>Access subjects</p>
-            <a class="button_primary" href="subjects/index.php">Subjects</a>
+            <a class="button_primary" href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         </div>
         <div class="item_link">
             <h2>Jobs</h2>

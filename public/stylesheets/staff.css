@@ -1,22 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Global variables */
+/* GLOBAL VARIABLES */
 :root {
     --main_color: #2f02fc;
-    --main_color_light: #e7e5ef;
+    --main_color_light: #ebebeb;
     --border_color: #d9d9d9;
+    --paragraph_color: grey;
+
+    --button_pri: var(--main_color);
+    --button_pri_hover: #2500c9;
 }
 
 
-/* All */
+/* ALL */
 * {
     font-family: Poppins, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+p {
+    color: var(--paragraph_color);
+}
 
-/* Navigation */
+
+/* NAVIGATION */
 .navigation_bar {
     padding: 16px 100px;
     background-color: var(--main_color);
@@ -47,11 +55,17 @@
 }
 
 .button_primary {
-    background-color: var(--main_color);
+    background-color: var(--button_pri);
     border-radius: 100px;
     padding: 8px 22px;
     text-decoration: none;
     color: white;
+    transition: 100ms;
+    display: inline-block;
+}
+
+.button_primary:hover {
+    background-color: var(--button_pri_hover);
 }
 
 .link_menu {
@@ -60,10 +74,13 @@
     color: white;
 }
 
+h3 a {
+  color: white;  
+}
 
-/* Staff */
+
+/* STAFF */
 .section_hero {
-    background-color: var(--main_color_light);
     padding: 33px 100px;
 }
 
@@ -74,9 +91,9 @@
 
 .item_link {
     width: 100%;
-    background-color: white;
     border-radius: 16px;
     padding: 33px;
+    border: 1px solid var(--border_color);
 }
 
 .item_link p {

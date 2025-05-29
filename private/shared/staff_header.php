@@ -15,10 +15,11 @@
 
         <div class="navigation_bar">
             <div class="navigation_left">
-                <h3>Pokémon Index</h3>
+                <h3><a href="<?php url_for('/staff/index.php');?>">Pokémon Index</a></h3>
             </div>
             <div class="navigation_right">
                 <a class="button_menu" href="index.php">Logout</a>
+                <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subject</a>
                 <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>
             </div>
         </div>
