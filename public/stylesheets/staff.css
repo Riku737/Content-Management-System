@@ -5,7 +5,7 @@
     --main_color: #2f02fc;
     --main_color_light: #ebebeb;
     --border_color: #d9d9d9;
-    --paragraph_color: grey;
+    --paragraph_color: #414141;
 
     --button_pri: var(--main_color);
     --button_pri_hover: #2500c9;
@@ -36,6 +36,14 @@ p {
     width: 50%;
     display: flex;
     align-items: center;
+}
+
+.navigation_name {
+    text-decoration: none;
+}
+
+.navigation_name:hover {
+    color: var();
 }
 
 .navigation_right {
@@ -79,6 +87,15 @@ h3 a {
 }
 
 
+/* FOOTER */
+
+footer {
+    padding: 16px 100px;
+    background-color: black;
+    color: white;
+}
+
+
 /* STAFF */
 .section_hero {
     padding: 33px 100px;
@@ -102,4 +119,49 @@ h3 a {
 
 .section_hero h1 {
     margin-bottom: 16px;
+}
+
+
+
+/* SUBJECTS */
+
+.section_subjects {
+    padding: 33px 100px;
+}
+
+.list {
+    width: 100%;
+    border: 1px solid var(--border_color);
+    border-radius: 16px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--main_color);
+    color: white;
+}
+
+.list tr:nth-child(odd) {
+    background-color: #f8f7ff;
+}
+
+.list td, .list th {
+    padding: 16px;
+    text-align: left;
+    border: none; 
+}
+
+.list td {
+    color: var(--paragraph_color);
+}
+
+.action {
+    text-decoration: none;
+    color: var(--button_pri);
+}
+
+.action:hover {
+    color: var(--button_pri_hover);
 }
