@@ -2,13 +2,13 @@
 
 /* GLOBAL VARIABLES */
 :root {
-    --main_color: #2f02fc;
+    --main_color: #4a2add;
     --main_color_light: #ebebeb;
     --border_color: #d9d9d9;
     --paragraph_color: #414141;
 
     --button_pri: var(--main_color);
-    --button_pri_hover: #2500c9;
+    --button_pri_hover: #2b197e;
 }
 
 
@@ -25,9 +25,16 @@ p {
 
 
 /* NAVIGATION */
+.navigation_background {
+    width: 100%;
+    padding: 8px 0px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid var(--border_color);
+}
+
 .navigation_bar {
-    padding: 16px 100px;
-    background-color: var(--main_color);
+    width: 1080px;
+    margin: auto;
     color: white;
     display: flex;
 }
@@ -55,7 +62,6 @@ p {
 }
 
 .button_menu {
-    background-color: white;
     border-radius: 100px;
     padding: 8px 22px;
     text-decoration: none;
@@ -79,26 +85,43 @@ p {
 .link_menu {
     border-radius: 100px;
     text-decoration: none;
-    color: white;
+    color: black;
+}
+
+
+.link_menu:hover {
+    color: var(--button_pri_hover);
 }
 
 h3 a {
-  color: white;  
+  color: black;  
+}
+
+h3 a:hover {
+  color: var(--button_pri_hover);  
 }
 
 
 /* FOOTER */
 
 footer {
-    padding: 16px 100px;
+    width: 100%;
     background-color: black;
     color: white;
+    margin-top: 64px;
+    padding: 8px 0px;
+}
+
+.section_footer {
+    width: 1080px;
+    margin: auto;
 }
 
 
 /* STAFF */
 .section_hero {
-    padding: 33px 100px;
+    width: 1080px;
+    margin: auto;
 }
 
 .container_link {
@@ -108,7 +131,7 @@ footer {
 
 .item_link {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 8px;
     padding: 33px;
     border: 1px solid var(--border_color);
 }
@@ -126,13 +149,22 @@ footer {
 /* SUBJECTS */
 
 .section_subjects {
-    padding: 33px 100px;
+    width: 1080px;
+    margin: auto;
+}
+
+.section_subjects_heading {
+    margin-bottom: 32px;
+}
+
+.section_subjects_heading h1 {
+    margin-bottom: 8px;
 }
 
 .list {
     width: 100%;
     border: 1px solid var(--border_color);
-    border-radius: 16px;
+    border-radius: 8px;
     border-collapse: separate;
     border-spacing: 0;
     overflow: hidden;
@@ -157,11 +189,11 @@ th {
     color: var(--paragraph_color);
 }
 
-.action {
+.link_paragraph {
     text-decoration: none;
     color: var(--button_pri);
 }
 
-.action:hover {
+.link_paragraph:hover {
     color: var(--button_pri_hover);
 }
