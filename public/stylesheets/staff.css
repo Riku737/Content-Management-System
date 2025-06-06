@@ -28,8 +28,8 @@ p {
 .navigation_background {
     width: 100%;
     padding: 8px 0px;
-    margin-bottom: 64px;
     border-bottom: 1px solid var(--border_color);
+    margin-bottom: 64px;
 }
 
 .navigation_bar {
@@ -80,6 +80,7 @@ p {
 
 .button_primary:hover {
     background-color: var(--button_pri_hover);
+    color: white;
 }
 
 .link_menu {
@@ -141,24 +142,24 @@ footer {
 }
 
 .section_hero h1 {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 
 
 /* SUBJECTS */
 
-.section_subjects {
+.section_table {
     width: 1080px;
     margin: auto;
 }
 
-.section_subjects_heading {
+.section_table_heading {
     margin-bottom: 32px;
 }
 
-.section_subjects_heading h1 {
-    margin-bottom: 8px;
+.section_table_heading h1 {
+    margin-bottom: 16px;
 }
 
 .list {
@@ -196,4 +197,30 @@ th {
 
 .link_paragraph:hover {
     color: var(--button_pri_hover);
+}
+
+.section_show {
+    margin: auto;
+    width: 1080px;
+}
+
+a {
+    color: var(--button_pri);
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--button_pri_hover);
+}
+
+.bread_crumb {
+    display: flex;
+    gap: 4px;
+}
+
+
+/* SHOW */
+.section_show h1 {
+    margin-bottom: 16px;
 }

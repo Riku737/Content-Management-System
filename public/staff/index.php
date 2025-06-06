@@ -1,4 +1,7 @@
-<?php require_once('../../private/initialize.php');?>
+<?php 
+    // PHP statement runs the specified file only once during script executation. If the file has already been included
+    require_once('../../private/initialize.php');
+?>
 
 <?php $page_title = 'Staff Menu';?>
 
@@ -6,19 +9,22 @@
 
 <div class="section_hero">
 
+    <div class="bread_crumb">
+        <a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
+    </div>
     <h1>Welcome back, Admin</h1>
-    <div class="container_link">
+    <nav class="container_link">
         <div class="item_link">
             <h2>Subjects</h2>
             <p>Access subjects</p>
-            <a class="button_primary" href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
+            <a class="button_primary" href="<?php echo url_for('/staff/subjects/index.php')?>">Visit</a>
         </div>
         <div class="item_link">
-            <h2>Jobs</h2>
-            <p>Access jobs</p>
-            <a class="button_primary" href="subjects/index.php">Subjects</a>
+            <h2>Pages</h2>
+            <p>Access pages</p>
+            <a class="button_primary" href="<?php echo url_for('/staff/pages/index.php')?>">Visit</a>
         </div>
-    </div>
+    </nav>
 
 </div>
 

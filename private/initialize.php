@@ -1,26 +1,32 @@
 <?php
 
-    // Library of functions
+    ob_start(); // Output buffering is turned on
 
-    // PHP CONSTANTS
+    // PHP CONSTANTS FOR PATHS
 
-    // Sets PRIVATE_PATH to the directory of the current file
+    // Sets PRIVATE_PATH to the directory of the current file (private/)
     define("PRIVATE_PATH", dirname(__FILE__));
     
-    // Sets PROJECT_PATH to the parent directory of PRIVATE_PATH
+    // Sets PROJECT_PATH to the parent directory of PRIVATE_PATH (project root)
     define("PROJECT_PATH", dirname(PRIVATE_PATH));
 
     // Sets PUBLIC_PATH to the public folder inside the project
     define("PUBLIC_PATH", PROJECT_PATH . '/public');
 
-    // Sets SHARED_PATH to the shared folder inside of prvate
+    // Sets SHARED_PATH to the shared folder inside of private
     define("SHARED_PATH", PRIVATE_PATH . '/shared');
 
+    // Find the position after '/public' in the current script's path
     $public_end = strpos($_SERVER['SCRIPT_NAME'], '/public') + 7;
+    
+    // Get the URL path up to and including '/public'
     $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
     
-    // Sets WWW_ROOT to URL path of the public directory
+    // Sets WWW_ROOT to URL path of the public directory (used for generating URLs)
     define("WWW_ROOT", $doc_root);
+
+
+    // FUNCTION INCLUSION
 
     // Runs functions.php only once no matter how many times it is called
     require_once('functions.php');
