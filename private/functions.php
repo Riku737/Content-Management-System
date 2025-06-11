@@ -35,13 +35,38 @@
         exit();
     }
 
+    /**
+     * Summary of error_500
+     * @return never does not return anything
+     */
     function error_500() {
         header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Server Error");
         exit();
     }
 
+    /**
+     * Summary of redirect_to
+     * @param mixed $location pathway location
+     * @return never does not return anything
+     */
     function redirect_to($location) {
         header(header: "Location: " . $location);
         exit;
+    }
+
+    /**
+     * Whether it is a post request
+     * @return bool
+     */
+    function is_post_request() {
+        return $_SERVER['REQUEST_METHOD'] == 'POST';
+    }
+
+    /**
+     * Whether it is a get request
+     * @return bool
+     */
+    function is_get_request() {
+        return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
 ?>

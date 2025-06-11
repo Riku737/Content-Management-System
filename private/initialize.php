@@ -30,5 +30,9 @@
 
     // Runs functions.php only once no matter how many times it is called
     require_once('functions.php');
+    require_once('database.php');
+    require_once('query_functions.php');
+
+    $db = db_connect();
 
 ?>

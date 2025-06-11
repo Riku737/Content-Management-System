@@ -75,12 +75,15 @@ p {
     text-decoration: none;
     color: white;
     transition: 100ms;
+    border: none;
     display: inline-block;
+    font: inherit;
 }
 
 .button_primary:hover {
     background-color: var(--button_pri_hover);
     color: white;
+    cursor: pointer;
 }
 
 .link_menu {
@@ -171,19 +174,23 @@ footer {
     overflow: hidden;
 }
 
-th {
-    background-color: var(--main_color);
-    color: white;
-}
-
-.list tr:nth-child(odd) {
+/* th {
     background-color: #f8f7ff;
-}
+} */
+
+/* .list tr:hover:nth-child(n+2) {
+    background-color: #f8f7ff;
+} */
 
 .list td, .list th {
     padding: 16px;
     text-align: left;
     border: none; 
+    border-bottom: 1px solid var(--border_color);
+}
+
+.list tr:last-child td {
+    border-bottom: none;
 }
 
 .list td {
@@ -223,4 +230,28 @@ a:hover {
 /* SHOW */
 .section_show h1 {
     margin-bottom: 16px;
+}
+
+
+/* CREATE */
+.section_form {
+    margin: auto;
+    width: 1080px;
+}
+
+.section_form h1 {
+    margin-bottom: 32px;
+}
+
+.section_form dl {
+    margin-bottom: 16px;
+}
+
+.input_short_form {
+    width: 50%;
+    border: 1px solid var(--border_color);
+    padding: 8px 8px;
+    color: var(--paragraph_color);
+    font: inherit;
+    border-radius: 7px;
 }
