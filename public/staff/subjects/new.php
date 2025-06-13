@@ -57,8 +57,9 @@ $subject["position"] = $subject_count;
                     <input type="checkbox" name="visible" value="1"/>
                 </dd>
             </dl>
-            <div id="operations">
+            <div id="section_button">
                 <input class="button_primary" type="submit" value="Create Subject" />
+                <a href="<?php echo url_for('/staff/subjects/index.php');?>" class="button_secondary">Cancel</a>
             </div>
         </form>
 

@@ -100,8 +100,9 @@ if (is_post_request()) {
                     <textarea class="input_short_form" type="text" name="content"><?php echo h($page['content'])?></textarea>
                 </dt>
             </dl>
-            <div id="operations">
+            <div id="section_button">
                 <input class="button_primary" type="submit" value="Create Page" />
+                <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_secondary">Cancel</a>
             </div>
         </form>
 
