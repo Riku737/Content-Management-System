@@ -1,4 +1,6 @@
+/* TYPE IMPORTS FROM GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* GLOBAL VARIABLES */
 :root {
@@ -14,9 +16,13 @@
 
 /* ALL */
 * {
-    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-family: Inter, Poppins, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Poppins;
 }
 
 p {
@@ -27,7 +33,7 @@ p {
 /* NAVIGATION */
 .navigation_background {
     width: 100%;
-    padding: 8px 0px;
+    padding: 16px 0px;
     border-bottom: 1px solid var(--border_color);
     margin-bottom: 64px;
 }
@@ -62,7 +68,7 @@ p {
 }
 
 .button_menu {
-    border-radius: 100px;
+    border-radius: 8px;
     padding: 8px 22px;
     text-decoration: none;
     color: black;
@@ -70,7 +76,7 @@ p {
 
 .button_primary {
     background-color: var(--button_pri);
-    border-radius: 100px;
+    border-radius: 8px;
     padding: 8px 22px;
     text-decoration: none;
     color: white;
@@ -222,10 +228,10 @@ a:hover {
 }
 
 .bread_crumb {
+    margin-bottom: 8px;
     display: flex;
     gap: 4px;
 }
-
 
 /* SHOW */
 .section_show h1 {
@@ -255,3 +261,6 @@ a:hover {
     font: inherit;
     border-radius: 7px;
 }
+
+
+/* DELETE */

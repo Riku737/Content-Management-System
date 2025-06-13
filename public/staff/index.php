@@ -12,17 +12,17 @@
     <div class="bread_crumb">
         <a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
     </div>
-    <h1>Welcome back, Admin</h1>
+    <h1><?php time_greeting(); ?></h1>
     <nav class="container_link">
         <div class="item_link">
             <h2>Subjects</h2>
             <p>Access subjects</p>
-            <a class="button_primary" href="<?php echo url_for('/staff/subjects/index.php')?>">Visit</a>
+            <a class="button_primary" href="<?php echo url_for('/staff/subjects/index.php')?>">Manage</a>
         </div>
         <div class="item_link">
             <h2>Pages</h2>
             <p>Access pages</p>
-            <a class="button_primary" href="<?php echo url_for('/staff/pages/index.php')?>">Visit</a>
+            <a class="button_primary" href="<?php echo url_for('/staff/pages/index.php')?>">Manage</a>
         </div>
     </nav>
 

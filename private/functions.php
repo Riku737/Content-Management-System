@@ -69,4 +69,16 @@
     function is_get_request() {
         return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
+
+    function time_greeting() {
+        date_default_timezone_set("America/New_York");
+        $time = date("H");
+        if ($time < 12) {
+            echo "Good Morning";
+        } else if ($time < 17) {
+            echo "Good Afternoon";
+        } else if ($time < 24) {
+            echo "Good Evening";
+        }
+    }
 ?>

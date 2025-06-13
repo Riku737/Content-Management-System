@@ -17,7 +17,7 @@
 
             <div class="navigation_bar">
                 <div class="navigation_left">
-                    <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Pokémon Index</a></h3>
+                    <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Riki Bank</a></h3>
                 </div>
                 <div class="navigation_right">
                     <a class="button_primary" href="index.php">Logout</a>
