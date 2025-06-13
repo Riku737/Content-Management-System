@@ -84,6 +84,7 @@ p {
     border: none;
     display: inline-block;
     font: inherit;
+    font-weight: bold
 }
 
 .button_primary:hover {
@@ -102,6 +103,7 @@ p {
     transition: 100ms;
     display: inline-block;
     font: inherit;
+    font-weight: bold;
 }
 
 .button_secondary:hover {
