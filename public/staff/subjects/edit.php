@@ -23,6 +23,26 @@ if (is_post_request()) {
     $subject['position'] = $_POST['position'] ?? '';
     $subject['visible'] = $_POST['visible'] ?? '';
 
+    /**
+     * Note to self:
+     * 
+     * $_GET (SECURITY DOESN'T MATTER)
+     * Data is appended to the URL
+     * NOT SECURE
+     * char limit
+     * Bookmark is possible w/ values
+     * GET requests can be cached
+     * Better for a search page
+     * 
+     * $_POST (SECURITY MATTERS)
+     * Data is packaged inside the body of the HTTP request
+     * MORE SECURE
+     * No data limit
+     * Cannot bookmark
+     * Requests are not cached
+     * Better for submitting credentials
+     */
+
     $result = update_subject($subject);
     redirect_to(url_for('/staff/subjects/show.php?id=' . $id));
 
@@ -45,7 +65,7 @@ if (is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/edit.php')?>">Edit</a>
+        <a href="<?php echo url_for('/staff/subjects/edit.php')?>"><?php echo h($subject['menu_name'])?></a>
     </div>
 
     <div class="subject edit">

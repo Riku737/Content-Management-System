@@ -27,33 +27,42 @@ $pages_set = find_all_pages();
 			</div>
 			<h1>Pages</h1>
 			<div class="actions">
-				<a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php');?>">+ Add page</a>
+				<a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php');?>">+ Create page</a>
 			</div>
 
 		</div>
 
 		<table class="list">
 			<tr>
-				<th style="width:10%">ID</th>
-				<th style="width:10%">Subject</th>
+				<th style="width:5%">ID</th>
+				<th style="width:30%">Subject</th>
 				<th style="width:10%">Position</th>
 				<th style="width:10%">Visible</th>
-				<th style="width:45%">Name</th>
+				<th style="width:30%">Name</th>
 				<th style="width:5%">&nbsp;</th>
 				<th style="width:5%">&nbsp;</th>
 				<th style="width:5%">&nbsp;</th>
 			</tr>
 
 			<?php while ($page = mysqli_fetch_assoc($pages_set)) { ?>
+				<?php $subject = find_subject_by_id( $page['subject_id']); ?>
 				<tr>
-				<td><?php echo h($page['id']); ?></td>
-				<td><?php echo h($page['subject_id']); ?></td>
-				<td><?php echo h($page['position']); ?></td>
-				<td><?php echo h($page['visible']) == 1 ? 'true' : 'false'; ?></td>
-				<td><?php echo h($page['menu_name']); ?></td>
-				<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/show.php?id=' . h(u($page['id'])))?>">View</a></td>
-				<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($page['id'])))?>">Edit</a></td>
-				<td><a class="link_paragraph action" href="">Delete</a></td>
+					<td><?php echo h($page['id']); ?></td>
+					<td><?php echo h($subject['menu_name']); ?></td>
+					<td><?php echo h($page['position']); ?></td>
+					<td>
+						<?php 
+							if (h($page['visible'] == 1)) {
+								echo 'Yes';
+							} else {
+								echo 'No';
+							}
+						?>
+					</td>
+					<td><?php echo h($page['menu_name']); ?></td>
+					<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/show.php?id=' . h(u($page['id'])))?>">View</a></td>
+					<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($page['id'])))?>">Edit</a></td>
+					<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/delete.php?id=' . h(u($page['id']))); ?>">Delete</a></td>
 				</tr>
 			<?php } ?>
 		</table>

@@ -70,6 +70,7 @@
         return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
 
+    // Welcome prompt on staff home 
     function time_greeting() {
         date_default_timezone_set("America/New_York");
         $time = date("H");

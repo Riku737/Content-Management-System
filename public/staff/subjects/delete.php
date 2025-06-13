@@ -28,19 +28,21 @@ if(is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for(script_path: '/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/delete.php')?>">Delete</a>
+        <a href="<?php echo url_for('/staff/subjects/delete.php')?>"><?php echo h($subject['menu_name'])?></a>
     </div>
 
-    <div class="subject delete">
-        <h1>Delete <?php echo $subject['menu_name'];?></h1>
-        <p>Are you sure you want to delete this subject?</p>
-        <p class="item"><?php echo h($subject['menu_name']); ?></p>
+    <div class="delete subject">
+        <h1>Delete Subject</h1>
+        <p>Are you sure you want to delete subject "<?php echo h($subject['menu_name']); ?>"?</p>
 
-        <form action="<?php echo url_for('/staff/subjects/delete.php?id=' . h(u($subject['id']))); ?>" method="post">
-            <div id="operations">
-                <input class="button_primary" type="submit" name="commit" value="Delete Subject" />
-            </div>
-        </form>
+        <div class="section_button">
+            <form action="<?php echo url_for('/staff/subjects/delete.php?id=' . h(u($subject['id']))); ?>" method="post">
+                <input class="button_secondary" type="submit" name="commit" value="Delete Subject"/>
+            </form>
+            <form action="<?php echo url_for('/staff/subjects/index.php'); ?>" method="post">
+                <input class="button_primary" type="submit" name="commit" value="Cancel"/>
+            </form>
+        </div>
     </div>
 
 </div>

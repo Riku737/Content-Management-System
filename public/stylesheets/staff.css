@@ -21,7 +21,7 @@
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, th {
     font-family: Poppins;
 }
 
@@ -92,6 +92,23 @@ p {
     cursor: pointer;
 }
 
+.button_secondary {
+    background-color: white;
+    border: 1px solid var(--main_color_light);
+    border-radius: 8px;
+    padding: 8px 22px;
+    text-decoration: none;
+    color: var(--main_color);
+    transition: 100ms;
+    display: inline-block;
+    font: inherit;
+}
+
+.button_secondary:hover {
+    background-color: var(--border_color);
+    cursor: pointer;
+}
+
 .link_menu {
     border-radius: 100px;
     text-decoration: none;
@@ -116,10 +133,9 @@ h3 a:hover {
 
 footer {
     width: 100%;
-    background-color: black;
-    color: white;
+    border-top: 1px solid var(--border_color);
     margin-top: 64px;
-    padding: 8px 0px;
+    padding: 16px 0px;
 }
 
 .section_footer {
@@ -142,8 +158,12 @@ footer {
 .item_link {
     width: 100%;
     border-radius: 8px;
-    padding: 33px;
+    padding: 32px;
     border: 1px solid var(--border_color);
+}
+
+.item_link h2 {
+    margin-bottom: 8px;
 }
 
 .item_link p {
@@ -260,7 +280,19 @@ a:hover {
     color: var(--paragraph_color);
     font: inherit;
     border-radius: 7px;
+    resize: vertical;
 }
 
-
 /* DELETE */
+.delete h1 {
+    margin-bottom: 16px;
+}
+
+.delete p {
+    margin-bottom: 32px;
+}
+
+.section_button {
+    display: flex;
+    gap: 8px;
+}

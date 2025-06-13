@@ -23,7 +23,7 @@ $subject["position"] = $subject_count;
         <p>/</p>
         <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/edit.php')?>">Create Subject</a>
+        <a href="<?php echo url_for('/staff/subjects/edit.php')?>">Create New Subject</a>
     </div>
 
     <div class="subject new">

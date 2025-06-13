@@ -20,7 +20,7 @@
         <p>/</p>
         <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a><?php echo $subject['menu_name'];?></a>
+        <a><?php echo h($subject['menu_name']);?></a>
     </div>
 
     <h1><?php echo h($subject['menu_name']);?></h1>

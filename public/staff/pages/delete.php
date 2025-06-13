@@ -1,0 +1,49 @@
+<?php
+
+require_once('../../../private/initialize.php');
+
+if(!isset($_GET['id'])) {
+  redirect_to(url_for('/staff/pages/index.php'));
+}
+$id = $_GET['id'];
+
+if(is_post_request()) {
+    $result = delete_page($id);
+    redirect_to(url_for('/staff/pages/index.php'));
+} else {
+    $page = find_page_by_id($id);
+}
+
+?>
+
+<?php $page_title = 'Delete Page'; ?>
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
+
+<div class="section_form" id="content">
+
+    <div class="bread_crumb">
+        <a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
+        <p>/</p>
+        <a href="<?php echo url_for(script_path: '/staff/pages/index.php')?>">Pages</a>
+        <p>/</p>
+        <a href="<?php echo url_for('/staff/pages/delete.php')?>"><?php echo h($page['menu_name'])?></a>
+    </div>
+
+    <div class="page delete">
+        <h1>Delete Page</h1>
+        <p>Are you sure you want to delete page "<?php echo h($page['menu_name'])?>"?</p>
+
+        <div class="section_button">
+            <form action="<?php echo url_for('/staff/pages/delete.php?id=' . h(u($page['id']))); ?>" method="post">
+                <input class="button_secondary" type="submit" name="commit" value="Delete Page" />
+            </form>
+            <form action="<?php echo url_for('/staff/pages/index.php'); ?>" method="post">
+                <input class="button_primary" type="submit" name="commit" value="Cancel" />
+            </form>
+        </div>
+        
+    </div>
+
+</div>
+
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>

@@ -4,7 +4,13 @@
 <?php $page_title = 'Show Pages'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-<?php $id = isset($_GET['id']) ? $_GET['id']: '1'; // Default value ?>
+<?php
+    
+    $id = isset($_GET['id']) ? $_GET['id']: '1';
+    $page = find_page_by_id($id);
+    $subject = find_subject_by_id($page['subject_id']);
+
+?>
 
 <div class="section_show">
 
@@ -13,12 +19,18 @@
         <p>/</p>
         <a href="<?php echo url_for('/staff/pages/index.php')?>">Pages</a>
         <p>/</p>
-        <a><?php echo $id;?></a>
+        <a><?php echo h($page['menu_name']);?></a>
     </div>
 
-    <h1>Page ID: <?php echo h($id);?></h1>
+    <h1><?php echo h($page['menu_name']); ?></h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+    <div class="attributes">
+        <p>Subject: <?php echo h($subject['menu_name']);?></p>
+        <p>Menu Name: <?php echo h($page['menu_name']);?></p>
+        <p>Position: <?php echo h($page['position']);?></p>
+        <p>Visible: <?php echo h($page['visible'] == '1' ? 'true' : 'false');?></p>
+        <p>Content: <?php echo h(string: $page['content']);?></p>
+    </div>
 
     <!-- <a href="show.php?name=<?php echo u('John Doe'); ?>">Link</a><br>
     <a href="show.php?name=<?php echo u('Widgets&More'); ?>">Link</a><br>
