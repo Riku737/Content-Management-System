@@ -44,15 +44,19 @@ if (is_post_request()) {
      */
 
     $result = update_subject($subject);
-    redirect_to(url_for('/staff/subjects/show.php?id=' . $id));
+    if ($result === true) {
+        redirect_to(url_for('/staff/subjects/show.php?id=' . $id));
+    } else {
+        $errors = $result;
+        // var_dump($errors); // Debugging
+    }
 
 } else {
     $subject = find_subject_by_id($id);
-
-    $subject_set = find_all_subjects();
-    $subject_count = mysqli_num_rows($subject_set);
-    mysqli_free_result($subject_set);
 }
+$subject_set = find_all_subjects();
+$subject_count = mysqli_num_rows($subject_set);
+mysqli_free_result($subject_set);
 ?>
 
 <?php $page_title = 'Edit Subject'; ?>
@@ -65,16 +69,18 @@ if (is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/edit.php')?>"><?php echo h($subject['menu_name'])?></a>
+        <a href="<?php echo url_for('/staff/subjects/edit.php')?>"><?php if (is_blank($subject['menu_name'])) { echo "Edit Subject"; } else { echo h($subject['menu_name']); }?></a>
     </div>
 
     <div class="subject edit">
         <h1>Edit Subject</h1>
 
+        <?php echo display_errors($errors); ?>
+
         <form action="<?php echo url_for('/staff/subjects/edit.php?id=' . h(u($id)))?>" method="post">
             <dl>
                 <dt>Menu Name</dt>
-                <dd><input type="text" class="input_short_form" name="menu_name" value="<?php echo h($subject['menu_name']);?>" /></dd>
+                <dd><input type="text" class="input_short_form <?php echo input_errors($errors); ?>" name="menu_name" value="<?php echo h($subject['menu_name']);?>" /></dd>
             </dl>
             <dl>
                 <dt>Position</dt>

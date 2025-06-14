@@ -82,4 +82,25 @@
             echo "Good Evening";
         }
     }
+
+    function display_errors($errors=array()) {
+        $output = '';
+        if(!empty($errors)) {
+            $output .= "<div class=\"errors\">";
+            $output .= "<b>Please fix the following errors:</b>";
+            foreach($errors as $error) {
+                $output .= "<p>" . h($error) . "</p>";
+            }
+            $output .= "</div>";
+        }
+        return $output;
+    }
+
+    function input_errors($errors=array()) {
+        $output = '';
+        if(!empty($errors)) {
+            $output = "input_short_form_error"; 
+        }
+        return $output;
+    }
 ?>

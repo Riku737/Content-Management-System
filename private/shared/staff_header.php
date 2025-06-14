@@ -20,7 +20,7 @@
                     <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Riki Bank</a></h3>
                 </div>
                 <div class="navigation_right">
-                    <a class="button_primary" href="index.php">Logout</a>
+                    <a class="button_secondary" href="index.php">Logout</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>

@@ -39,9 +39,7 @@ if(is_post_request()) {
             <form action="<?php echo url_for('/staff/subjects/delete.php?id=' . h(u($subject['id']))); ?>" method="post">
                 <input class="button_secondary" type="submit" name="commit" value="Delete Subject"/>
             </form>
-            <form action="<?php echo url_for('/staff/subjects/index.php'); ?>" method="post">
-                <input class="button_primary" type="submit" name="commit" value="Cancel"/>
-            </form>
+            <a href="<?php echo url_for('/staff/subjects/index.php');?>" class="button_primary">Cancel</a>
         </div>
     </div>
 

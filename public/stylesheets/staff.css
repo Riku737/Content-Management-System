@@ -69,7 +69,7 @@ p {
 
 .button_menu {
     border-radius: 8px;
-    padding: 8px 22px;
+    padding: 8px 24px;
     text-decoration: none;
     color: black;
 }
@@ -77,7 +77,7 @@ p {
 .button_primary {
     background-color: var(--button_pri);
     border-radius: 8px;
-    padding: 8px 22px;
+    padding: 8px 24px;
     text-decoration: none;
     color: white;
     transition: 100ms;
@@ -281,8 +281,13 @@ a:hover {
     padding: 8px 8px;
     color: var(--paragraph_color);
     font: inherit;
-    border-radius: 7px;
+    border-radius: 8px;
     resize: vertical;
+}
+
+.input_short_form:focus-visible {
+    outline: 1px solid var(--main_color);
+    color: black;
 }
 
 /* DELETE */
@@ -297,4 +302,22 @@ a:hover {
 .section_button {
     display: flex;
     gap: 8px;
+}
+
+/* ERRORS */
+
+.errors {
+    background-color: #ffeff2;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    padding: 32px;
+    color: #ff4466;
+}
+
+.errors p {
+    color: #ff4466;
+}
+
+.input_short_form_error {
+    outline: 1px solid #ff4466;
 }

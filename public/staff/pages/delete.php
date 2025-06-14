@@ -37,9 +37,7 @@ if(is_post_request()) {
             <form action="<?php echo url_for('/staff/pages/delete.php?id=' . h(u($page['id']))); ?>" method="post">
                 <input class="button_secondary" type="submit" name="commit" value="Delete Page" />
             </form>
-            <form action="<?php echo url_for('/staff/pages/index.php'); ?>" method="post">
-                <input class="button_primary" type="submit" name="commit" value="Cancel" />
-            </form>
+            <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_primary">Cancel</a>
         </div>
         
     </div>
