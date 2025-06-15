@@ -96,4 +96,20 @@
 		return preg_match($email_regex, $value) === 1;
 	}
 
+	// has_unique_page_menu_name('History')
+	// Validates uniquemess pages.menu_name
+	function has_unique_page_menu_name($menu_name, $current_id="0") {
+        global $db;
+
+		$sql = "SELECT * FROM pages ";
+		$sql .= "WHERE menu_name='" . $menu_name . "' ";
+		$sql .= "AND id != '" . $current_id . "'";
+
+		$page_set = mysqli_query($db, $sql); // Contains all rows from the pages table with provided $menu_name
+		$page_count = mysqli_num_rows($page_set); // Counts number of rows
+		mysqli_free_result($page_set); // Free memory
+
+		return $page_count === 0; // If it's existing, then 1 and return false
+    }
+
 ?>

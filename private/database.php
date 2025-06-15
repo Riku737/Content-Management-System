@@ -32,4 +32,10 @@
             exit("Database query failed");
         }
     }
+
+    // Alternative: addslashes($string) for php
+    // mysqli_real_escape_string is specifically for mySQL
+    function db_escape($connection, $string) {
+        return mysqli_real_escape_string($connection, $string);
+    }
 ?>

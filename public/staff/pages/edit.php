@@ -35,16 +35,22 @@ if (is_post_request()) {
      */
 
     $result = update_page($page);
-    redirect_to(url_for('/staff/pages/show.php?id=' . $id));
+    if ($result === true) {
+        // redirect_to(url_for('/staff/pages/show.php?id=' . $id));
+        redirect_to(url_for('/staff/pages/index.php'));
+    } else {
+        $errors = $result;
+    }
 
 } else {
     
     $page = find_page_by_id($id);
 
-    $page_set = find_all_pages();
-    $page_count = mysqli_num_rows($page_set);
-    mysqli_free_result($page_set);
 }
+
+$page_set = find_all_pages();
+$page_count = mysqli_num_rows($page_set);
+mysqli_free_result($page_set);
 ?>
 
 <?php $page_title = 'Edit Page'; ?>
@@ -57,66 +63,61 @@ if (is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for('/staff/pages/index.php')?>">Pages</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/pages/edit.php')?>"><?php echo h($page['menu_name'])?></a>
+        <a href="<?php echo url_for('/staff/pages/edit.php')?>"><?php if (is_blank($page['menu_name'])) { echo "Edit Page"; } else { echo h($page['menu_name']); }?></a>
     </div>
 
-    <div class="Page edit">
+    <div class="section_content">
         <h1>Edit Page</h1>
+        <?php echo display_errors($errors)?>
 
-        <form action="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($id)))?>" method="post">
-            <dl>
-                <dt>Subject</dt>
-                <dd>
-                    <select name="subject_id">
-                        <?php
-                            $subject_set = find_all_subjects();
-                            while($subject = mysqli_fetch_assoc($subject_set)) {
-                                echo "<option value=\"" . h($subject['id']) . "\"";
-                                if ($page["subject_id"] == $subject['id']) {
-                                    echo " selected";
-                                }
-                                echo ">" . h($subject['menu_name']) . "</option>";
+        <form class="section_form_fields" action="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($id)))?>" method="post">
+            <div class="<?php echo input_errors($errors)?>">
+                <h4>Subject</h4>
+                <select class="select_custom" name="subject_id">
+                    <?php
+                        $subject_set = find_all_subjects();
+                        while($subject = mysqli_fetch_assoc($subject_set)) {
+                            echo "<option value=\"" . h($subject['id']) . "\"";
+                            if ($page["subject_id"] == $subject['id']) {
+                                echo " selected";
                             }
-                            mysqli_free_result($subject_set);
-                        ?>
-                    </select>
-                </dd>
-            </dl>
-            <dl>
-                <dt>Menu Name</dt>
-                <dd><input type="text" class="input_short_form" name="menu_name" value="<?php echo h($page['menu_name']);?>"/></dd>
-            </dl>
-            <dl>
-                <dt>Position</dt>
-                <dd>
-                    <select name="position">
-                        <?php
-                            for ($i = 1; $i <= $page_count; $i++) {
-                                echo "<option value =\"{$i}\"";
-                                if ($page['position'] == $i) {
-                                    echo " selected";
-                                }
-                                echo ">{$i}</option>";
+                            echo ">" . h($subject['menu_name']) . "</option>";
+                        }
+                        mysqli_free_result($subject_set);
+                    ?>
+                </select>
+            </div>
+            <div class="<?php echo input_errors($errors)?>">
+                <h4>Page Name</h4>
+                <input type="text" class="input_short_form" name="menu_name" value="<?php echo h($page['menu_name']);?>"/>
+            </div>
+            <div class="<?php echo input_errors($errors)?>">
+                <h4>Position</h4>
+                <select class="select_custom" name="position">
+                    <?php
+                        for ($i = 1; $i <= $page_count; $i++) {
+                            echo "<option value =\"{$i}\"";
+                            if ($page['position'] == $i) {
+                                echo " selected";
                             }
-                        ?>
-                    </select>
-                </dd>
-            </dl>
-            <dl>
-                <dt>Visible</dt>
-                <dd>
+                            echo ">{$i}</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class="<?php echo input_errors($errors)?>">
+                <h4>Visible</h4>
+                <div>
                     <input type="hidden" name="visible" value="0" />
                     <input type="checkbox" name="visible" value="1"<?php if ($page['visible'] == "1") { echo " checked"; }?> />
-                </dd>
-            </dl>
-            <dl>
-                <dt>Content</dt>
-                <dt>
-                    <textarea class="input_short_form" type="text" name="content"><?php echo h($page['content'])?></textarea>
-                </dt>
-            </dl>
+                </div>
+            </div>
+            <div class="<?php echo input_errors($errors)?>">
+                <h4>Page Content</h4>
+                <textarea class="input_short_form" type="text" name="content"><?php echo h($page['content'])?></textarea>
+            </div>
             <div id="section_button">
-                <input class="button_primary" type="submit" value="Save Edit" />
+                <input class="button_primary" type="submit" value="Save edit" />
                 <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_secondary">Cancel</a>
             </div>
         </form>

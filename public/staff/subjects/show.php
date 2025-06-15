@@ -26,7 +26,7 @@
     <h1><?php echo h($subject['menu_name']);?></h1>
 
     <div class="attributes">
-        <p>Menu Name: <?php echo h($subject['menu_name']);?></p>
+        <p>Subject Name: <?php echo h($subject['menu_name']);?></p>
         <p>Position: <?php echo h($subject['position']);?></p>
         <p>Visible: <?php echo h($subject['visible'] == '1' ? 'true' : 'false');?></p>
     </div>

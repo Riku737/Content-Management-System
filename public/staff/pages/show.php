@@ -26,10 +26,10 @@
 
     <div class="attributes">
         <p>Subject: <?php echo h($subject['menu_name']);?></p>
-        <p>Menu Name: <?php echo h($page['menu_name']);?></p>
+        <p>Page Name: <?php echo h($page['menu_name']);?></p>
         <p>Position: <?php echo h($page['position']);?></p>
         <p>Visible: <?php echo h($page['visible'] == '1' ? 'true' : 'false');?></p>
-        <p>Content: <?php echo h(string: $page['content']);?></p>
+        <p>Page Content: <?php echo h(string: $page['content']);?></p>
     </div>
 
     <!-- <a href="show.php?name=<?php echo u('John Doe'); ?>">Link</a><br>

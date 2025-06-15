@@ -26,16 +26,16 @@ if(is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for(script_path: '/staff/pages/index.php')?>">Pages</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/pages/delete.php')?>"><?php echo h($page['menu_name'])?></a>
+        <a href="<?php echo url_for('/staff/pages/delete.php?=' . $id)?>"><?php echo h($page['menu_name'])?></a>
     </div>
 
-    <div class="page delete">
+    <div class="section_content delete">
         <h1>Delete Page</h1>
-        <p>Are you sure you want to delete page "<?php echo h($page['menu_name'])?>"?</p>
+        <p>Are you sure you want to delete <a href="<?php echo url_for('/staff/pages/show.php?id=' . h(u($page['id'])));?>"><?php echo h($page['menu_name']); ?></a>?</p>
 
         <div class="section_button">
             <form action="<?php echo url_for('/staff/pages/delete.php?id=' . h(u($page['id']))); ?>" method="post">
-                <input class="button_secondary" type="submit" name="commit" value="Delete Page" />
+                <input class="button_secondary" type="submit" name="commit" value="Delete page" />
             </form>
             <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_primary">Cancel</a>
         </div>

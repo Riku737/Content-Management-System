@@ -11,18 +11,21 @@
 
     --button_pri: var(--main_color);
     --button_pri_hover: #2b197e;
+
+    --main_font: Inter, Poppins, Arial, Helvetica, sans-serif;
+    --heading_font: Poppins;
 }
 
 
 /* ALL */
 * {
-    font-family: Inter, Poppins, Arial, Helvetica, sans-serif;
+    font-family: var(--main_font);
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6, th {
-    font-family: Poppins;
+    font-family: var(--heading_font);
 }
 
 p {
@@ -83,7 +86,7 @@ p {
     transition: 100ms;
     border: none;
     display: inline-block;
-    font: inherit;
+    font: var(--main_font);
     font-weight: bold
 }
 
@@ -102,7 +105,7 @@ p {
     color: var(--main_color);
     transition: 100ms;
     display: inline-block;
-    font: inherit;
+    font: var(--main_font);
     font-weight: bold;
 }
 
@@ -276,19 +279,53 @@ a:hover {
 }
 
 .input_short_form {
-    width: 50%;
     border: 1px solid var(--border_color);
     padding: 8px 8px;
     color: var(--paragraph_color);
-    font: inherit;
+    font: var(--main_font);
     border-radius: 8px;
-    resize: vertical;
+    width: 50%;
+    max-width: 540px;
+    font-size: 16px;
 }
 
 .input_short_form:focus-visible {
     outline: 1px solid var(--main_color);
     color: black;
 }
+
+.section_form_fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.section_form_fields h4 {
+    margin-bottom: 4px;
+}
+
+.section_form_fields div {
+    width: 100%;
+}
+
+.select_custom {
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid var(--border_color);
+    font: var(--main_font);
+    color: var(--paragraph_color);
+    font-size: 16px;
+}
+
+.select_custom:focus-visible {
+    outline: 1px solid var(--main_color);
+    color: black;
+}
+
+.section_content {
+    width: 100%;
+}
+
 
 /* DELETE */
 .delete h1 {
@@ -320,4 +357,5 @@ a:hover {
 
 .input_short_form_error {
     outline: 1px solid #ff4466;
+    border-radius: 8px;
 }

@@ -11,6 +11,7 @@ $subject = find_subject_by_id($id);
 
 if(is_post_request()) {
     $result = delete_subject($id);
+    $result = delete_subject_pages($id);
     redirect_to(url_for('/staff/subjects/index.php'));
 } else {
     $subject = find_subject_by_id($id);
@@ -28,16 +29,15 @@ if(is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for(script_path: '/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/delete.php')?>"><?php echo h($subject['menu_name'])?></a>
+        <a href="<?php echo url_for('/staff/subjects/delete.php?=' . $id)?>"><?php echo h($subject['menu_name'])?></a>
     </div>
 
-    <div class="delete subject">
+    <div class="section_content delete">
         <h1>Delete Subject</h1>
-        <p>Are you sure you want to delete subject "<?php echo h($subject['menu_name']); ?>"?</p>
-
+        <p>Are you sure you want to delete <a href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($subject['id'])));?>"><?php echo h($subject['menu_name']); ?></a> and its related pages?</p>
         <div class="section_button">
             <form action="<?php echo url_for('/staff/subjects/delete.php?id=' . h(u($subject['id']))); ?>" method="post">
-                <input class="button_secondary" type="submit" name="commit" value="Delete Subject"/>
+                <input class="button_secondary" type="submit" name="commit" value="Delete subject"/>
             </form>
             <a href="<?php echo url_for('/staff/subjects/index.php');?>" class="button_primary">Cancel</a>
         </div>
