@@ -112,4 +112,19 @@
 		return $page_count === 0; // If it's existing, then 1 and return false
     }
 
+	function has_unique_subject_menu_name($menu_name, $current_id="0") {
+        global $db;
+
+		$sql = "SELECT * FROM subjects ";
+		$sql .= "WHERE menu_name='" . db_escape($db, $menu_name) . "' ";
+		$sql .= "AND id != '" . db_escape($db, $current_id) . "'";
+
+		$subject_set = mysqli_query($db, $sql); // Contains all rows from the pages table with provided $menu_name
+		$subject_count = mysqli_num_rows($subject_set); // Counts number of rows
+		mysqli_free_result($subject_set); // Free memory
+
+		return $subject_count === 0; // If it's existing, then 1 and return false
+    }
+
+
 ?>

@@ -52,6 +52,12 @@
             $errors[] = "Visible must be true or false.";
         }
 
+        // name
+        $current_id = $subject['id'] ?? '0';
+        if (!has_unique_subject_menu_name($subject['menu_name'], $current_id)) {
+            $errors[] = "Subject name must be unique.";
+        }
+
         return $errors;
     }
 

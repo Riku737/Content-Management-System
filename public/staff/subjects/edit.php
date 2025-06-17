@@ -79,11 +79,11 @@ mysqli_free_result($subject_set);
         <?php echo display_errors($errors); ?>
 
         <form class="section_form_fields" action="<?php echo url_for('/staff/subjects/edit.php?id=' . h(u($id)))?>" method="post">
-            <div>
+            <div class="<?php echo input_errors($errors); ?>">
                 <h4>Subject Name</h4>
-                <input type="text" class="input_short_form <?php echo input_errors($errors); ?>" name="menu_name" value="<?php echo h($subject['menu_name']);?>" />
+                <input type="text" class="input_short_form" name="menu_name" value="<?php echo h($subject['menu_name']);?>" />
             </div>
-            <div>
+            <div class="<?php echo input_errors($errors); ?>">
                 <h4>Position</h4>
                 <select name="position"  class="select_custom">
                     <?php
@@ -97,7 +97,7 @@ mysqli_free_result($subject_set);
                     ?>
                 </select>
             </div>
-            <div>
+            <div class="<?php echo input_errors($errors); ?>">
                 <h4>Visible</h4>
                 <div>
                     <input type="hidden" name="visible" value="0" />
