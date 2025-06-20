@@ -5,14 +5,14 @@
 
 <?php $page_title = 'Staff Menu';?>
 
-<?php include(SHARED_PATH . '/staff_header.php');?>
+<?php include(SHARED_PATH . '/staff_navigation.php');?>
 
 <div class="section_hero">
 
     <div class="bread_crumb">
         <a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
     </div>
-    <h1><?php time_greeting(); ?></h1>
+    <h1><?php display_greeting(); ?></h1>
     <nav class="container_link">
         <div class="item_link">
             <h2>Subjects</h2>

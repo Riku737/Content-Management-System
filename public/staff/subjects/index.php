@@ -7,7 +7,7 @@
 
 
 <?php $page_title = 'Subjects'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
 
 <div class="section_table" id="content">
 

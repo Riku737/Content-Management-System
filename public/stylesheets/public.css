@@ -1,0 +1,21 @@
+/* SITEMAP */
+.section_sitemap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.subject_sitemap {
+    border: 1px solid var(--border_color);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.page_sitemap {
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+}

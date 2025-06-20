@@ -59,7 +59,7 @@ p {
 }
 
 .navigation_name:hover {
-    color: var();
+    color: black;
 }
 
 .navigation_right {
@@ -70,11 +70,19 @@ p {
     gap: 33px;
 }
 
-.button_menu {
+.button_menu_primary {
+    background-color: white;
     border-radius: 8px;
-    padding: 8px 24px;
+    padding: 8px 22px;
     text-decoration: none;
-    color: black;
+    color: var(--main_color);
+    transition: 100ms;
+    font: var(--main_font);
+}
+
+.button_menu_primary:hover {
+    background-color: var(--border_color);
+    cursor: pointer;
 }
 
 .button_primary {
@@ -133,10 +141,21 @@ h3 a:hover {
   color: var(--button_pri_hover);  
 }
 
+
+a {
+    color: var(--button_pri);
+    text-decoration: underline;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--button_pri_hover);
+}
+
 .navigation_banner {
     background-color: var(--main_color);
     width: 100%;
-    padding: 8px 0px;
+    padding: 16px 0px;
     /* height: 54px;
     align-content: center; */
 }
@@ -146,6 +165,17 @@ h3 a:hover {
     margin: auto;
     display: flex;
     color: white !important;
+}
+
+/* CONTENT */
+
+.section_content {
+    width: 1080px;
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 32px;
 }
 
 /* FOOTER */

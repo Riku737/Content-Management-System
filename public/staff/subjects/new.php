@@ -39,7 +39,7 @@ $subject["position"] = $subject_count;
 ?>
 
 <?php $page_title = 'Create Subject'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
 
 <div class="section_form">
 

@@ -36,7 +36,7 @@ mysqli_free_result($page_set);
 ?>
 
 <?php $page_title = 'Create Page'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
 
 <div class="section_form">
 

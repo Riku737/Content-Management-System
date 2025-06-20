@@ -71,7 +71,7 @@
     }
 
     // Welcome prompt on staff home 
-    function time_greeting() {
+    function display_greeting() {
         date_default_timezone_set("America/New_York");
         $time = date("H");
         if ($time < 12) {
@@ -103,4 +103,11 @@
         }
         return $output;
     }
+
+    function display_sitemap() {
+
+        
+
+    }
+
 ?>

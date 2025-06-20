@@ -54,7 +54,7 @@ mysqli_free_result($page_set);
 ?>
 
 <?php $page_title = 'Edit Page'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
 
 <div class="section_form">
 
