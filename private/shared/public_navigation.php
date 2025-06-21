@@ -18,12 +18,10 @@
 
             <div class="navigation_bar">
                 <div class="navigation_left">
-                    <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Riki Bank</a></h3>
+                    <h3><a class="navigation_name" href="<?php echo url_for('/index.php');?>">Riki Bank</a></h3>
                 </div>
                 <div class="navigation_right">
-                    <a class="button_secondary" href="index.php">Sign in</a>
-                    <!-- <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a> -->
-                    <!-- <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a> -->
+                    <a class="button_secondary" href="<?php echo url_for('/staff/index.php'); ?>">Sign in</a>
                     <a class="link_menu" href="<?php echo url_for('/index.php'); ?>">Home</a>
                 </div>
             </div>

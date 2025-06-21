@@ -1,4 +1,4 @@
-/* SITEMAP */
+/* SITEMAP (Home) */
 .section_sitemap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -18,4 +18,40 @@
     display: flex;
     row-gap: 8px;
     flex-direction: column;
+}
+
+/* PAGES */
+
+img {
+    border-radius: 8px;
+}
+
+#hero-image img {
+    width: 100%;
+    height: fit-content;
+}
+
+#hero-image {
+    margin-bottom: 32px;
+}
+
+#content h1 {
+    margin-bottom: 16px;
+}
+
+#content h2 {
+    margin-bottom: 8px;
+}
+
+#content p {
+    margin-bottom: 16px;
+}
+
+#content ul {
+    padding-left: 32px;
+    margin-bottom: 12px;
+}
+
+#content li {
+    margin-bottom: 4px;
 }

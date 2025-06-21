@@ -4,13 +4,13 @@
 
 /* GLOBAL VARIABLES */
 :root {
-    --main_color: #4a2add;
-    --main_color_light: #ebebeb;
-    --border_color: #d9d9d9;
-    --paragraph_color: #414141;
+    --main_color: #8f001a;
+    --main_color_light: #f2f2f2;
+    --border_color: #dfdfdf;
+    --paragraph_color: #2d2d2c;
 
     --button_pri: var(--main_color);
-    --button_pri_hover: #2b197e;
+    --button_pri_hover: #7b0016;
 
     --main_font: Inter, Poppins, Arial, Helvetica, sans-serif;
     --heading_font: Poppins;
@@ -143,7 +143,7 @@ h3 a:hover {
 
 
 a {
-    color: var(--button_pri);
+    color: var(--paragraph_color);
     text-decoration: underline;
 }
 
@@ -155,7 +155,7 @@ a:hover {
 .navigation_banner {
     background-color: var(--main_color);
     width: 100%;
-    padding: 16px 0px;
+    padding: 8px 0px;
     /* height: 54px;
     align-content: center; */
 }
@@ -176,6 +176,12 @@ a:hover {
 
 h1 {
     margin-bottom: 32px;
+}
+
+.bread_crumb {
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 /* FOOTER */
