@@ -31,6 +31,8 @@
         <p>Visible: <?php echo h($page['visible'] == '1' ? 'true' : 'false');?></p>
         <p>Page Content: <?php echo h(string: $page['content']);?></p>
     </div>
+    
+    <a href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true'); ?>" target="_blank">Preview Page</a>
 
     <!-- <a href="show.php?name=<?php echo u('John Doe'); ?>">Link</a><br>
     <a href="show.php?name=<?php echo u('Widgets&More'); ?>">Link</a><br>

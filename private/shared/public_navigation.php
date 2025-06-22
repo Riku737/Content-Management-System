@@ -1,6 +1,6 @@
 <?php
     if (!isset($page_title)) {
-        $page_title = 'Riki Bank';
+        $page_title = 'Public';
     }
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/public.css')?>"/>
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css')?>"/>
-        <title>Riki Bank - <?php echo h($page_title); ?></title>
+        <title>Riki Bank - <?php echo h($page_title);?> <?php if (isset($preview) && $preview) { echo ' [PREVIEW]'; } ?></title>
     </head>
     <body>
 

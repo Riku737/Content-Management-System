@@ -22,7 +22,7 @@
                     <h3>Admin Area</h3>
                 </div>
                 <div class="navigation_right">
-                    <a class="button_menu_primary" href="../index.php">Logout</a>
+                    <a class="button_menu_primary" href="<?php echo url_for('/index.php')?>">Logout</a>
                 </div>
             </div>
 

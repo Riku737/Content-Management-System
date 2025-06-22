@@ -114,7 +114,7 @@ mysqli_free_result($page_set);
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Page Content</h4>
-                <textarea class="input_short_form" type="text" name="content"><?php echo h($page['content'])?></textarea>
+                <textarea class="input_short_form" type="text" name="content" style="height: 256px"><?php echo h($page['content'])?></textarea>
             </div>
             <div id="section_button">
                 <input class="button_primary" type="submit" value="Save edit" />
