@@ -24,15 +24,33 @@
 
     <h1><?php echo h($page['menu_name']); ?></h1>
 
-    <div class="attributes">
-        <p>Subject: <?php echo h($subject['menu_name']);?></p>
-        <p>Page Name: <?php echo h($page['menu_name']);?></p>
-        <p>Position: <?php echo h($page['position']);?></p>
-        <p>Visible: <?php echo h($page['visible'] == '1' ? 'true' : 'false');?></p>
-        <p>Page Content: <?php echo h(string: $page['content']);?></p>
-    </div>
+    <table class="list section_attributes">
+        <tr>
+            <th style="width: 20%">Subject</th>
+            <td style="width: 80%"><?php echo h($subject['menu_name']);?></td>
+        </tr>
+        <tr>
+            <th>Page Name</th>
+            <td><?php echo h($page['menu_name']);?></td>
+        </tr>
+        <tr>
+            <th>Position</th>
+            <td><?php echo h($page['position']);?></td>
+        </tr>
+        <tr>
+            <th>Visible</th>
+            <td><?php echo h($page['visible'] == '1' ? 'true' : 'false');?></td>
+        </tr>
+        <tr>
+            <th>Page Content</th>
+            <td><?php echo h($page['content']);?></td>
+        </tr>
+    </table>
     
-    <a href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true'); ?>" target="_blank">Preview Page</a>
+    <div id="section_button">
+        <a class="button_primary" href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true'); ?>" target="_blank">Preview page</a>
+        <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_secondary">Go back</a>
+    </div>
 
     <!-- <a href="show.php?name=<?php echo u('John Doe'); ?>">Link</a><br>
     <a href="show.php?name=<?php echo u('Widgets&More'); ?>">Link</a><br>

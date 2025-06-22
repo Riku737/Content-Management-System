@@ -19,7 +19,7 @@
 
             <div class="navigation_banner_content">
                 <div class="navigation_left">
-                    <h3>Admin Area</h3>
+                    <h3>Admin</h3>
                 </div>
                 <div class="navigation_right">
                     <a class="button_menu_primary" href="<?php echo url_for('/index.php')?>">Logout</a>

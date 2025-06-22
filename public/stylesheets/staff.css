@@ -69,12 +69,17 @@
     border-bottom: 1px solid var(--border_color);
 }
 
-.list tr:last-child td {
+.list tr:last-child td,
+.list tr:last-child th {
     border-bottom: none;
 }
 
 .list td {
     color: var(--paragraph_color);
+}
+
+.list th {
+    align-content: start;
 }
 
 .link_paragraph {
@@ -95,6 +100,10 @@
 /* SHOW */
 .section_show h1 {
     margin-bottom: 16px;
+}
+
+.section_attributes {
+    margin-bottom: 32px;
 }
 
 
