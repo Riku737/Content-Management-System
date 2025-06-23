@@ -21,7 +21,7 @@
                     <h3><a class="navigation_name" href="<?php echo url_for('/index.php');?>">Riki Bank</a></h3>
                 </div>
                 <div class="navigation_right">
-                    <a class="button_secondary" href="<?php echo url_for('/staff/index.php'); ?>">Sign in</a>
+                    <a class="button_secondary" href="<?php echo url_for('/staff/login.php'); ?>">Log in</a>
                     <a class="link_menu" href="<?php echo url_for('/index.php'); ?>">Home</a>
                 </div>
             </div>

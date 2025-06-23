@@ -75,12 +75,13 @@
         date_default_timezone_set("America/New_York");
         $time = date("H");
         if ($time < 12) {
-            echo "Good Morning";
+            echo "Good Morning, ";
         } else if ($time < 17) {
-            echo "Good Afternoon";
+            echo "Good Afternoon, ";
         } else if ($time < 24) {
-            echo "Good Evening";
+            echo "Good Evening, ";
         }
+        echo $_SESSION['username'] ?? '';
     }
 
     function display_errors($errors=array()) {

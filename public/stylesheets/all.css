@@ -167,6 +167,10 @@ a:hover {
     color: white !important;
 }
 
+.navigation_banner p {
+    color: white;
+}
+
 /* CONTENT */
 
 .section_content {
