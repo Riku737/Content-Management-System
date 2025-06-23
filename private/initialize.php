@@ -2,6 +2,8 @@
 
     ob_start(); // Output buffering is turned on
 
+    session_start(); // Turn on sessions
+
     // PHP CONSTANTS FOR PATHS
 
     // Sets PRIVATE_PATH to the directory of the current file (private/)

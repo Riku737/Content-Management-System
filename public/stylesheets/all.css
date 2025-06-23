@@ -184,6 +184,54 @@ h1 {
     gap: 8px;
 }
 
+.select_custom {
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid var(--border_color);
+    font: var(--main_font);
+    color: var(--paragraph_color);
+    font-size: 16px;
+}
+
+.select_custom:focus-visible {
+    outline: 1px solid var(--main_color);
+    color: black;
+}
+
+.input_short_form {
+    border: 1px solid var(--border_color);
+    padding: 8px 8px;
+    color: var(--paragraph_color);
+    font: var(--main_font);
+    border-radius: 8px;
+    width: 50%;
+    max-width: 100%;
+    min-width: 540px;
+    font-size: 16px;
+    resize: both;
+}
+
+.input_short_form:focus-visible {
+    outline: 1px solid var(--main_color);
+    color: black;
+}
+
+
+.section_form_fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.section_form_fields h4 {
+    margin-bottom: 4px;
+}
+
+.section_form_fields div {
+    width: 100%;
+}
+
+
 /* FOOTER */
 
 footer {

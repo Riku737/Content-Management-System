@@ -22,7 +22,9 @@ if (isset($_GET['id'])) {
 
 <?php $page_title = 'Home'; ?>
 
-<?php include(SHARED_PATH . '/public_navigation.php'); ?>
+<?php 
+    include(SHARED_PATH . '/public_navigation.php'); 
+?>
 
 <div class="section_content">
 
