@@ -16,7 +16,7 @@
 		<div class="bread_crumb">
 			<a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
 			<p>/</p>
-			<a href="<?php echo url_for(script_path: '/staff/subjects/index.php')?>">Subjects</a>
+			<p>Subjects</p>
 		</div>
 		<h1>Subjects</h1>
 		<div class="actions">

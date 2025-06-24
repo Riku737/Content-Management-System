@@ -12,6 +12,7 @@ $subject = find_subject_by_id($id);
 if(is_post_request()) {
     $result = delete_subject($id);
     $result = delete_subject_pages($id);
+    $_SESSION['message'] = 'The subject was deleted successfully.';
     redirect_to(url_for('/staff/subjects/index.php'));
 } else {
     $subject = find_subject_by_id($id);
@@ -29,7 +30,7 @@ if(is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for(script_path: '/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/delete.php?=' . $id)?>"><?php echo h($subject['menu_name'])?></a>
+        <p><?php echo h($subject['menu_name'])?></p>
     </div>
 
     <div class="section_content delete">

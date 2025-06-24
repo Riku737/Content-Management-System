@@ -9,6 +9,7 @@ $id = $_GET['id'];
 
 if(is_post_request()) {
     $result = delete_page($id);
+    $_SESSION['message'] = 'The page was deleted successfully.';
     redirect_to(url_for('/staff/pages/index.php'));
 } else {
     $page = find_page_by_id($id);
@@ -26,7 +27,7 @@ if(is_post_request()) {
         <p>/</p>
         <a href="<?php echo url_for(script_path: '/staff/pages/index.php')?>">Pages</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/pages/delete.php?=' . $id)?>"><?php echo h($page['menu_name'])?></a>
+        <p><?php echo h($page['menu_name'])?></p>
     </div>
 
     <div class="section_content delete">

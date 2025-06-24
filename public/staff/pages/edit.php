@@ -37,6 +37,7 @@ if (is_post_request()) {
     $result = update_page($page);
     if ($result === true) {
         // redirect_to(url_for('/staff/pages/show.php?id=' . $id));
+        $_SESSION['message'] = 'The page was edited successfully.';
         redirect_to(url_for('/staff/pages/index.php'));
     } else {
         $errors = $result;
@@ -63,7 +64,7 @@ mysqli_free_result($page_set);
         <p>/</p>
         <a href="<?php echo url_for('/staff/pages/index.php')?>">Pages</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/pages/edit.php')?>"><?php if (is_blank($page['menu_name'])) { echo "Edit Page"; } else { echo h($page['menu_name']); }?></a>
+        <p><?php if (is_blank($page['menu_name'])) { echo "Edit Page"; } else { echo h($page['menu_name']); }?></p>
     </div>
 
     <div class="section_content">

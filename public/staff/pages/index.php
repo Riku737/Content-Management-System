@@ -22,7 +22,7 @@ $pages_set = find_all_pages();
 		<div class="bread_crumb">
 			<a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
 			<p>/</p>
-			<a href="<?php echo url_for(script_path: '/staff/pages/index.php')?>">Pages</a>
+			<p>Pages</p>
 		</div>
 		<h1>Pages</h1>
 		<div class="actions">

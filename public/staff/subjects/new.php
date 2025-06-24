@@ -22,6 +22,7 @@ if (is_post_request()) {
     $result = insert_subject($subject);
     if ($result === true) {
         $new_id = mysqli_insert_id($db);
+        $_SESSION['message'] = 'The subject was created successfully.';
         redirect_to(url_for('/staff/subjects/show.php?id=' . $new_id));
     } else {
         $errors = $result;
@@ -48,7 +49,7 @@ $subject["position"] = $subject_count;
         <p>/</p>
         <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/edit.php')?>">Create New Subject</a>
+        <p>Create New Subject</p>
     </div>
 
     <div class="section_content">

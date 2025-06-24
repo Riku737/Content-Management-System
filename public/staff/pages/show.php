@@ -19,7 +19,7 @@
         <p>/</p>
         <a href="<?php echo url_for('/staff/pages/index.php')?>">Pages</a>
         <p>/</p>
-        <a><?php echo h($page['menu_name']);?></a>
+        <p><?php echo h($page['menu_name']);?></p>
     </div>
 
     <h1><?php echo h($page['menu_name']); ?></h1>

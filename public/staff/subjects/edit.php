@@ -46,6 +46,7 @@ if (is_post_request()) {
     $result = update_subject($subject);
     if ($result === true) {
         // redirect_to(url_for('/staff/subjects/show.php?id=' . $id));
+        $_SESSION['message'] = 'The subject was edited successfully.';
         redirect_to(url_for('/staff/subjects/index.php'));
     } else {
         $errors = $result;
@@ -70,7 +71,7 @@ mysqli_free_result($subject_set);
         <p>/</p>
         <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/subjects/edit.php')?>"><?php if (is_blank($subject['menu_name'])) { echo "Edit Subject"; } else { echo h($subject['menu_name']); }?></a>
+        <p><?php if (is_blank($subject['menu_name'])) { echo "Edit Subject"; } else { echo h($subject['menu_name']); }?></p>
     </div>
 
     <div class="section_content">
