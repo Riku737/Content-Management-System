@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <th>Visible</th>
-            <td><?php echo h($page['visible'] == '1' ? 'true' : 'false');?></td>
+            <td><?php echo h($page['visible'] == '1' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>');?></td>
         </tr>
         <tr>
             <th>Page Content</th>

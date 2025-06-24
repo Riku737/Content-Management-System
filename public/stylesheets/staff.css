@@ -107,6 +107,22 @@
 }
 
 
+/* Status Message */
+.message_success {
+    background-color: #728479;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    display: flex;
+    color: white;
+    gap: 8px;
+}
+
+.message_success p {
+    color: white;
+    font-weight: bold;
+}
+
 /* CREATE */
 .section_form {
     margin: auto;
@@ -142,15 +158,17 @@
 
 /* ERRORS */
 
-.errors {
+.message_error {
     background-color: #6d7983;
     margin-bottom: 32px;
     border-radius: 8px;
     padding: 32px;
     color: #ffff;
+    display: flex;
+    gap: 8px;
 }
 
-.errors p {
+.message_error p {
     color: #ffff;
 }
 

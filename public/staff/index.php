@@ -10,7 +10,7 @@
 <div class="section_hero">
 
     <div class="bread_crumb">
-        <a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
+        <p>Staff</p>
     </div>
     <h1><?php display_greeting(); ?></h1>
     <nav class="container_link">

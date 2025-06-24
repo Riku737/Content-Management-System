@@ -57,6 +57,8 @@ mysqli_free_result($page_set);
 <?php $page_title = 'Edit Page'; ?>
 <?php include(SHARED_PATH . '/staff_navigation.php'); ?>
 
+<?php echo display_errors($errors)?>
+
 <div class="section_form">
 
     <div class="bread_crumb">
@@ -69,7 +71,6 @@ mysqli_free_result($page_set);
 
     <div class="section_content">
         <h1>Edit Page</h1>
-        <?php echo display_errors($errors)?>
 
         <form class="section_form_fields" action="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($id)))?>" method="post">
             <div class="<?php echo input_errors($errors)?>">

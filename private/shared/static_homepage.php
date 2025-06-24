@@ -1,7 +1,7 @@
 <?php $subject_set = find_all_subjects(['visible' => true]); ?>
 
 <div class="bread_crumb">
-    <a href="<?php echo url_for('/index.php')?>">Public</a>
+    <p>Public</p>
 </div>
 
 <h1>Home</h1>

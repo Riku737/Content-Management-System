@@ -87,12 +87,12 @@
     function display_errors($errors=array()) {
         $output = '';
         if(!empty($errors)) {
-            $output .= "<div class=\"errors\">";
-            $output .= "<b>Please fix the following errors:</b>";
+            $output .= '<div class="section_content"><div class="message_error"><i class="bi bi-exclamation-triangle"></i><div class="message_error_content">';
+            $output .= '<b>Please fix the following errors:</b>';
             foreach($errors as $error) {
-                $output .= "<p>" . h($error) . "</p>";
+                $output .= '<p>' . h($error) . '</p>';
             }
-            $output .= "</div>";
+            $output .= '</div></div></div>';
         }
         return $output;
     }
@@ -105,10 +105,19 @@
         return $output;
     }
 
-    function display_sitemap() {
+    function get_and_clear_session_message() {
+        if (isset($_SESSION['message']) && $_SESSION['message'] != '') {
+            $msg = $_SESSION['message'];
+            unset($_SESSION['message']);
+            return $msg;
+        }
+    }
 
-        
-
+    function display_session_message() {
+        $msg = get_and_clear_session_message();
+        if(!is_blank($msg)) {
+            return '<div class="section_content"><div class="message_success">' . '<i class="bi bi-check-lg"></i>' . '<p>' . h($msg) . '</p>' . '</div></div>';
+        }
     }
 
 ?>
