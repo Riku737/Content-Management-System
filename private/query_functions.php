@@ -337,5 +337,24 @@
         return $result; // Returns an associative array
     }
 
+    // function find_all_admins() {
+
+    // }
+
+    // function find_admins_by_id($id) {
+
+    // }
+
+    // function insert_admin($admin) {
+
+    // }
+
+    // function update_admin($admin) {
+
+    // }
+
+    // function delete_admin($admin) {
+
+    // }
 
 ?>

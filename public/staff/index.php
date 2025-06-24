@@ -24,6 +24,11 @@
             <p>Access pages</p>
             <a class="button_primary" href="<?php echo url_for('/staff/pages/index.php')?>">Manage</a>
         </div>
+        <div class="item_link">
+            <h2>Admins</h2>
+            <p>Access admins</p>
+            <a class="button_primary" href="<?php echo url_for('/staff/admin/index.php')?>">Manage</a>
+        </div>
     </nav>
 
 </div>
