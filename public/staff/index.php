@@ -1,6 +1,6 @@
 <?php 
-    // PHP statement runs the specified file only once during script executation. If the file has already been included
-    require_once('../../private/initialize.php');
+// PHP statement runs the specified file only once during script executation. If the file has already been included
+require_once('../../private/initialize.php');
 ?>
 
 <?php $page_title = 'Staff Menu';?>
@@ -27,7 +27,7 @@
         <div class="item_link">
             <h2>Admins</h2>
             <p>Access admins</p>
-            <a class="button_primary" href="<?php echo url_for('/staff/admin/index.php')?>">Manage</a>
+            <a class="button_primary" href="<?php echo url_for('/staff/admins/index.php')?>">Manage</a>
         </div>
     </nav>
 

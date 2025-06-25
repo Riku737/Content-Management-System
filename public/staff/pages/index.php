@@ -1,6 +1,4 @@
-<?php require_once('../../../private/initialize.php'); ?>
-
-<?php
+<?php require_once('../../../private/initialize.php');
 
 $pages_set = find_all_pages();
 
@@ -10,10 +8,12 @@ $pages_set = find_all_pages();
 //     ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Small Business'],
 //     ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
 //   ];
-?>
 
-<?php $page_title = 'Pages'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
+$page_title = 'Pages';
+
+include(SHARED_PATH . '/staff_navigation.php'); 
+
+?>
 
 <div class="section_table" id="content">
 
@@ -26,7 +26,7 @@ $pages_set = find_all_pages();
 		</div>
 		<h1>Pages</h1>
 		<div class="actions">
-			<a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php');?>">+ Create page</a>
+			<a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php');?>">+ Add page</a>
 		</div>
 
 	</div>

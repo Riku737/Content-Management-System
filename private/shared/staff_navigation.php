@@ -1,7 +1,7 @@
 <?php
-    if (!isset($page_title)) {
-        $page_title = 'Staff Area';
-    }
+if (!isset($page_title)) {
+    $page_title = 'Staff Area';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css')?>"/>
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css')?>"/>
         <script src="<?php echo url_for('/scripts/staff.js')?>"></script>
-        <title>Admin - <?php echo h($page_title); ?></title>
+        <title>Riki Bank - <?php echo h($page_title); ?></title>
     </head>
     <body>
 
@@ -36,6 +36,7 @@
                     <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Riki Bank</a></h3>
                 </div>
                 <div class="navigation_right">
+                    <a class="link_menu" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>

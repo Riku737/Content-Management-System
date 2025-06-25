@@ -1,14 +1,14 @@
-<!-- Runs specified file only once during script execution -->
-<?php require_once('../../../private/initialize.php'); ?>
+<?php 
+// Runs specified file only once during script execution
 
-<?php $page_title = 'Show Pages'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
+require_once('../../../private/initialize.php');
 
-<?php
-    
-    $id = isset($_GET['id']) ? $_GET['id']: '1';
-    $page = find_page_by_id($id);
-    $subject = find_subject_by_id($page['subject_id']);
+$page_title = 'Show Pages';
+include(SHARED_PATH . '/staff_navigation.php'); 
+
+$id = isset($_GET['id']) ? $_GET['id']: '1';
+$page = find_page_by_id($id);
+$subject = find_subject_by_id($page['subject_id']);
 
 ?>
 

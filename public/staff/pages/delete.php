@@ -15,10 +15,10 @@ if(is_post_request()) {
     $page = find_page_by_id($id);
 }
 
-?>
+$page_title = 'Delete Page';
+include(SHARED_PATH . '/staff_navigation.php');
 
-<?php $page_title = 'Delete Page'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
+?>
 
 <div class="section_form" id="content">
 

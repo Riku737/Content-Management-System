@@ -1,7 +1,7 @@
 <?php
-    if (!isset($page_title)) {
-        $page_title = 'Public';
-    }
+if (!isset($page_title)) {
+    $page_title = 'Public';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

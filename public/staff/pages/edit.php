@@ -52,12 +52,15 @@ if (is_post_request()) {
 $page_set = find_all_pages();
 $page_count = mysqli_num_rows($page_set);
 mysqli_free_result($page_set);
+
+$page_title = 'Edit Page';
+
+include(SHARED_PATH . '/staff_navigation.php');
+
+echo display_errors($errors);
+
 ?>
 
-<?php $page_title = 'Edit Page'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
-
-<?php echo display_errors($errors)?>
 
 <div class="section_form">
 

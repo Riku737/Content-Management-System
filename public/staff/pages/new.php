@@ -34,12 +34,11 @@ $page_set = find_all_pages();
 $page_count = mysqli_num_rows($page_set) + 1;
 mysqli_free_result($page_set);
 
+$page_title = 'Create Page'; 
+include(SHARED_PATH . '/staff_navigation.php');
+
+echo display_errors($errors)
 ?>
-
-<?php $page_title = 'Create Page'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
-
-<?php echo display_errors($errors)?>
 
 <div class="section_form">
 

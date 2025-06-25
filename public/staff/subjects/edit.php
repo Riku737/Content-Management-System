@@ -56,15 +56,17 @@ if (is_post_request()) {
 } else {
     $subject = find_subject_by_id($id);
 }
+
 $subject_set = find_all_subjects();
 $subject_count = mysqli_num_rows($subject_set);
 mysqli_free_result($subject_set);
+
+$page_title = 'Edit Subject'; 
+include(SHARED_PATH . '/staff_navigation.php');
+
+echo display_errors($errors); 
+
 ?>
-
-<?php $page_title = 'Edit Subject'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
-
-<?php echo display_errors($errors); ?>
 
 <div class="section_form">
 

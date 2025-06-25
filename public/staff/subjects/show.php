@@ -1,13 +1,10 @@
-<!-- Runs specified file only once during script execution -->
-<?php require_once('../../../private/initialize.php'); ?>
-
 <?php 
+// Runs specified file only once during script execution
+require_once('../../../private/initialize.php');
+// $id = isset($_GET['id']) ? $_GET['id']: '1'; 
+$id = $_GET['id'] ?? '1'; // PHP > 7.0
 
-    // $id = isset($_GET['id']) ? $_GET['id']: '1'; 
-    $id = $_GET['id'] ?? '1'; // PHP > 7.0
-
-    $subject = find_subject_by_id($id);
-
+$subject = find_subject_by_id($id);
 ?>
 
 <?php $page_title = 'Show Subjects'; ?>

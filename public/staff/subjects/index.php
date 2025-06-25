@@ -2,12 +2,9 @@
 
 <?php $subject_set = find_all_subjects(); ?>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=visibility" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=visibility_off" />
 
-
-<?php $page_title = 'Subjects'; ?>
-<?php include(SHARED_PATH . '/staff_navigation.php'); ?>
+<?php $page_title = 'Subjects';?>
+<?php include(SHARED_PATH . '/staff_navigation.php');?>
 
 <div class="section_table" id="content">
 
@@ -20,7 +17,7 @@
 		</div>
 		<h1>Subjects</h1>
 		<div class="actions">
-			<a class="button_primary action" href="<?php echo url_for('/staff/subjects/new.php');?>">+ Create subject</a>
+			<a class="button_primary action" href="<?php echo url_for('/staff/subjects/new.php');?>">+ Add subject</a>
 		</div>
 
 	</div>

@@ -1,4 +1,6 @@
-<?php $subject_set = find_all_subjects(['visible' => true]); ?>
+<?php 
+$subject_set = find_all_subjects(['visible' => true]); 
+?>
 
 <div class="bread_crumb">
     <p>Public</p>

@@ -17,7 +17,6 @@ if(is_post_request()) {
 } else {
     $subject = find_subject_by_id($id);
 }
-
 ?>
 
 <?php $page_title = 'Delete Subject'; ?>
