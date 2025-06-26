@@ -8,14 +8,13 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/pages/index.php'));
 }
 $id = $_GET['id'];
+$page = find_page_by_id($id);
 
 if(is_post_request()) {
     $result = delete_page($id);
-    $_SESSION['message'] = 'The page was deleted successfully.';
-    redirect_to(url_for('/staff/pages/index.php'));
-} else {
-    $page = find_page_by_id($id);
-}
+    $_SESSION['message'] = $page['menu_name'] . ' page was deleted successfully.';
+    redirect_to(url_for('/staff/subjects/index.php?id' . h(u($page['subject_id']))));
+} 
 
 $page_title = 'Delete Page';
 include(SHARED_PATH . '/staff_navigation.php');
@@ -40,7 +39,7 @@ include(SHARED_PATH . '/staff_navigation.php');
             <form action="<?php echo url_for('/staff/pages/delete.php?id=' . h(u($page['id']))); ?>" method="post">
                 <input class="button_secondary" type="submit" name="commit" value="Delete page" />
             </form>
-            <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_primary">Cancel</a>
+            <a href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($page['subject_id'])));?>" class="button_primary">Back to subject</a>
         </div>
         
     </div>

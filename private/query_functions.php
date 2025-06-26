@@ -310,8 +310,8 @@ function delete_page($id) {
     global $db;
     
     $sql = "DELETE FROM pages ";
-    $sql .= "WHERE id=" . db_escape($db, $id);
-    $sql .= "LIMIT 1"; 
+    $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
+    $sql .= "LIMIT 1;"; 
 
     $result = mysqli_query($db, $sql);
     

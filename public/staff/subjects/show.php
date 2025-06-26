@@ -8,6 +8,7 @@ require_login();
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
 $subject = find_subject_by_id($id);
+$pages_set = find_pages_by_subject_id($id);
 
 ?>
 
@@ -25,7 +26,7 @@ $subject = find_subject_by_id($id);
     </div>
 
     <h1><?php echo h($subject['menu_name']);?></h1>
-
+    
     <table class="list section_attributes">
         <tr>
             <th style="width: 20%">Subject Name</th>
@@ -41,8 +42,56 @@ $subject = find_subject_by_id($id);
         </tr>
     </table>
 
+</div>
+
+<div class="section_show">
+
+    <div class="section_heading_button">
+        <div class="section_heading_button_left">
+            <h2>Pages</h2>
+        </div>  
+        <div class="section_heading_button_right">
+            <div class="actions">
+                <a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php?subject_id=' . h(u($subject['id'])));?>">+ Add page</a>
+            </div>
+        </div>    
+    </div>
+
+    <table class="list section_attributes">
+		<tr>
+			<th style="width:5%">ID</th>
+			<th style="width:10%">Position</th>
+			<th style="width:10%">Visible</th>
+			<th style="width:40%">Name</th>
+			<th style="width:5%">&nbsp;</th>
+			<th style="width:5%">&nbsp;</th>
+			<th style="width:5%">&nbsp;</th>
+		</tr>
+
+		<?php while ($page = mysqli_fetch_assoc($pages_set)) { ?>
+			<?php $subject = find_subject_by_id( $page['subject_id']); ?>
+			<tr>
+				<td><?php echo h($page['id']); ?></td>
+				<td><?php echo h($page['position']); ?></td>
+				<td>
+					<?php 
+						if (h($page['visible'] == 1)) {
+							echo 'Yes';
+						} else {
+							echo 'No';
+						}
+					?>
+				</td>
+				<td><?php echo h($page['menu_name']); ?></td>
+				<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/show.php?id=' . h(u($page['id'])))?>">View</a></td>
+				<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($page['id'])))?>">Edit</a></td>
+				<td><a class="link_paragraph action" href="<?php echo url_for('/staff/pages/delete.php?id=' . h(u($page['id']))); ?>">Delete</a></td>
+			</tr>
+		<?php } ?>
+	</table>
+
     <div id="section_button">
-        <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_primary">Go back</a>
+        <a href="<?php echo url_for('/staff/subjects/index.php');?>" class="button_secondary">Back to list</a>
     </div>
 
 

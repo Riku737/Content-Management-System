@@ -22,11 +22,11 @@ require_once('../../private/initialize.php');
             <p>Access subjects</p>
             <a class="button_primary" href="<?php echo url_for('/staff/subjects/index.php')?>">Manage</a>
         </div>
-        <div class="item_link">
+        <!-- <div class="item_link">
             <h2>Pages</h2>
             <p>Access pages</p>
             <a class="button_primary" href="<?php echo url_for('/staff/pages/index.php')?>">Manage</a>
-        </div>
+        </div> -->
         <div class="item_link">
             <h2>Admins</h2>
             <p>Access admins</p>

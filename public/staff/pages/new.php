@@ -25,7 +25,7 @@ if (is_post_request()) {
 
 } else {
     $page = [];
-    $page['subject_id'] = '';
+    $page['subject_id'] = $_GET['subject_id'] ?? '1';
     $page['menu_name'] = '';
     $page['position'] = '';
     $page['visible'] = '';
@@ -103,7 +103,7 @@ echo display_errors($errors)
             </div>
             <div id="section_button">
                 <input class="button_primary" type="submit" value="Create page" />
-                <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_secondary">Cancel</a>
+                <a href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($page['subject_id'])));?>" class="button_secondary">Back to subject</a>
             </div>
         </form>
 

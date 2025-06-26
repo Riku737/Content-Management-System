@@ -19,7 +19,7 @@
 		</div>
 		<h1>Subjects</h1>
 		<div class="actions">
-			<a class="button_primary action" href="<?php echo url_for('/staff/subjects/new.php');?>">+ Add subject</a>
+			<a class="button_primary action" href="<?php echo url_for('/staff/subjects/new.php');?>">+ Add new subject</a>
 		</div>
 
 	</div>

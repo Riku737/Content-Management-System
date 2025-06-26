@@ -52,7 +52,7 @@ $subject = find_subject_by_id($page['subject_id']);
     
     <div id="section_button">
         <a class="button_primary" href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true'); ?>" target="_blank">Preview page</a>
-        <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_secondary">Go back</a>
+        <a href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($subject['id'])));?>" class="button_secondary">Back to subject</a>
     </div>
 
 </div>

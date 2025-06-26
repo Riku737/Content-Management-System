@@ -74,6 +74,10 @@
     border-bottom: none;
 }
 
+.list td:nth-child(5), td:nth-child(6), td:nth-child(7) {
+    text-align: right;
+}
+
 .list td {
     color: var(--paragraph_color);
 }
@@ -104,6 +108,21 @@
 
 .section_attributes {
     margin-bottom: 32px;
+}
+
+.section_heading_button {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.section_heading_button_left {
+    width: 50%;   
+}
+
+.section_heading_button_right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 

@@ -37,7 +37,7 @@ if (!isset($page_title)) {
                 </div>
                 <div class="navigation_right">
                     <a class="link_menu" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
-                    <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a>
+                    <!-- <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a> -->
                     <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a>
                     <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>
                 </div>
