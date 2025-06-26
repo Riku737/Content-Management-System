@@ -1,8 +1,9 @@
 <?php
+
 require_once('../../../private/initialize.php');
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
-$admin = find_admins_by_id($id);
+$admin = find_admin_by_id($id);
 
 $page_title = 'Show Admin';
 include(SHARED_PATH . '/staff_navigation.php');

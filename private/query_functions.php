@@ -8,7 +8,7 @@ function find_all_subjects($options=[]) {
     if ($visible) {
         $sql .= " WHERE visible = true ";
     }
-    $sql .= "ORDER BY id, position ASC";
+    $sql .= "ORDER BY id ASC, position ASC";
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     return $result;
@@ -25,6 +25,11 @@ function find_subject_by_id($id) {
 
     $subject = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
+
+    if(!$subject) 
+    {
+        redirect_to(url_for('/staff/subjects/index.php'));
+    }
 
     return $subject; // Returns an associative array
 }
@@ -169,7 +174,7 @@ function find_all_pages() {
     global $db;
 
     $sql = "SELECT * FROM pages ";
-    $sql .= "ORDER BY subject_ID, position ASC";
+    $sql .= "ORDER BY subject_ID ASC, position ASC";
     $result = mysqli_query($db, $sql);
     confirm_result_set(result_set: $result);
     return $result;
@@ -190,6 +195,11 @@ function find_page_by_id($id, $options=[]) {
 
     $page = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
+
+    if (!$page)
+    {
+        redirect_to(url_for('/staff/pages/index.php'));
+    }
 
     return $page; // Returns an associative array
 }
@@ -337,31 +347,109 @@ function find_pages_by_subject_id($subject_id, $options=[]) {
     return $result; // Returns an associative array
 }
 
+
+
+// ADMINS
+
 function find_all_admins() {
     global $db;
 
     $sql = "SELECT * FROM admins ";
-    $sql .= "ORDER BY id, first_name, last_name ASC";
+    $sql .= "ORDER BY last_name ASC, first_name ASC";
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     return $result;
 }
 
-function find_admins_by_id($id) {
+function find_admin_by_id($id) {
     global $db;
 
     $sql = "SELECT * FROM admins ";
     $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
+    $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
 
     $admin = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
 
+    if(!$admin) 
+    {
+        redirect_to(url_for('/staff/admins/index.php'));
+    }
+
     return $admin;
 }
 
+function validate_admin($admin) {
+
+    $errors = [];
+
+    // first name
+    if (is_blank($admin['first_name'])) {
+        $errors[] = "First name cannot be blank.";
+    } else if (!has_length($admin['first_name'], ['min' => 2, 'max' => 255])) {
+        $errors[] = "First name must be between 2 and 255 characters.";
+    }
+
+    // last name
+    if (is_blank($admin['last_name'])) {
+        $errors[] = "Last name cannot be blank.";
+    } else if (!has_length($admin['last_name'], ['min' => 2, 'max' => 255])) {
+        $errors[] = "Last name must be between 2 and 255 characters.";
+    }
+
+    // email
+    if (is_blank($admin['email'])) {
+        $errors[] = "Email cannot be blank.";
+    } else if (!has_length($admin['email'], ['max' => 255])) {
+        $errors[] = "Email must be less than 255 characters.";
+    } else if (!has_valid_email_format($admin['email'])) {
+        $errors[] = "Email must be a valid format.";
+    }
+
+    // username
+    if (is_blank($admin['username'])) {
+        $errors[] = "Username cannot be blank.";
+    } else if (!has_length($admin['username'], ['min' => 8, 'max' => 255])) {
+        $errors[] = "Last name must be between 8 and 255 characters.";
+    } else if (!has_unique_username($admin['username'], $admin['id'] ?? 0)) {
+        $errors[] = "Username not allowed. Try another.";
+    }
+
+    // password
+    if(is_blank($admin['password'])) {
+		$errors[] = "Password cannot be blank.";
+    } elseif (!has_length($admin['password'], array('min' => 12))) {
+		$errors[] = "Password must contain 12 or more characters";
+    } elseif (!preg_match('/[A-Z]/', $admin['password'])) {
+		$errors[] = "Password must contain at least 1 uppercase letter";
+    } elseif (!preg_match('/[a-z]/', $admin['password'])) {
+		$errors[] = "Password must contain at least 1 lowercase letter";
+    } elseif (!preg_match('/[0-9]/', $admin['password'])) {
+		$errors[] = "Password must contain at least 1 number";
+    } elseif (!preg_match('/[^A-Za-z0-9\s]/', $admin['password'])) {
+		$errors[] = "Password must contain at least 1 symbol";
+    }
+
+	// confirm password
+    if(is_blank($admin['confirm_password'])) {
+		$errors[] = "Confirm password cannot be blank.";
+    } elseif ($admin['password'] !== $admin['confirm_password']) {
+		$errors[] = "Password and confirm password must match.";
+    }
+
+    return $errors;
+
+}
+
 function insert_admin($admin) {
+    if (!empty($errors)) {
+        return $errors;
+    }
+
+    $hashed_password = $admin['password'];
+
     global $db;
     $sql = "INSERT INTO admins ";
     $sql .= "(first_name, last_name, email, username, hashed_password) ";
@@ -370,7 +458,7 @@ function insert_admin($admin) {
     $sql .=  "'" . db_escape($db, $admin['last_name']) . "', ";
     $sql .=  "'" . db_escape($db, $admin['email']) . "', ";
     $sql .=  "'" . db_escape($db, $admin['username']) . "', ";
-    $sql .=  "'" . db_escape($db, $admin['password']) . "' ";
+    $sql .=  "'" . db_escape($db, $hashed_password) . "' ";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
     
@@ -384,23 +472,56 @@ function insert_admin($admin) {
     }
 }
 
-// function update_admin($admin) {
+function update_admin($admin) {
+    global $db;
 
-// }
+    $errors = validate_admin($admin);
+    if (!empty($errors)) {
+        return $errors;
+    }
 
-// function delete_admin($admin) {
+    $hashed_password = $admin['password'];
 
-// }
 
-/**
- * TODO
- * Admin validation:
- * - First name 2-255 ch
- * - Last name 2-255 ch
- * - Email: not blank, maximum 255 characters, valid format (use existing helper method)
- * - Username: 8-255 ch, unique
- * - Password: 12-plus characters with 1 lowercase letter, 1 number, 1 symbol (don't worry about encryption); use attribute password, not hashed password. for now only plain text.
- * - Confirm password: bot blank, matches password
- */
+    $sql = "UPDATE admins SET ";
+    $sql .= "first_name='" . db_escape($db, $admin['first_name']) . "', ";
+    $sql .= "last_name='" . db_escape($db, $admin['last_name']) . "', ";
+    $sql .= "email='" . db_escape($db, $admin['email']) . "', ";
+    $sql .= "username='" . db_escape($db, $admin['username']) . "', ";
+    $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "', ";
+    $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
+    $sql .= "LIMIT 1";
+    $result = mysqli_query($db, $sql);
+    
+    if ($result) {
+        return true;
+    } else {
+        // DELETE FAILED
+        echo mysqli_error($db);
+        db_disconnect($db);
+        exit;
+    }
+
+}
+
+function delete_admin($admin) {
+    global $db;
+    
+    $sql = "DELETE FROM admins ";
+    $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
+    $sql .= "LIMIT 1"; 
+
+    $result = mysqli_query($db, $sql);
+    
+    // For DELETE statements, $result is true/false
+    if ($result) {
+        return true;
+    } else {
+        // DELETE failed
+        echo mysqli_error($db);
+        db_disconnect($db);
+        exit;
+    }
+}
 
 ?>

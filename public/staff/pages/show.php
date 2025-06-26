@@ -8,6 +8,7 @@ include(SHARED_PATH . '/staff_navigation.php');
 
 $id = isset($_GET['id']) ? $_GET['id']: '1';
 $page = find_page_by_id($id);
+
 $subject = find_subject_by_id($page['subject_id']);
 
 ?>
@@ -51,10 +52,6 @@ $subject = find_subject_by_id($page['subject_id']);
         <a class="button_primary" href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true'); ?>" target="_blank">Preview page</a>
         <a href="<?php echo url_for('/staff/pages/index.php');?>" class="button_secondary">Go back</a>
     </div>
-
-    <!-- <a href="show.php?name=<?php echo u('John Doe'); ?>">Link</a><br>
-    <a href="show.php?name=<?php echo u('Widgets&More'); ?>">Link</a><br>
-    <a href="show.php?name=<?php echo u('!#*?'); ?>">Link</a> -->
 
 </div>
 
