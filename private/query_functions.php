@@ -194,10 +194,10 @@ function find_page_by_id($id, $options=[]) {
     $page = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
 
-    if (!$page)
-    {
-        redirect_to(url_for('/staff/pages/index.php'));
-    }
+    // if (!$page)
+    // {
+    //     redirect_to(url_for('/staff/pages/index.php'));
+    // }
 
     return $page; // Returns an associative array
 }

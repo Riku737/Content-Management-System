@@ -50,7 +50,7 @@ function error_500() {
  * @return never does not return anything
  */
 function redirect_to($location) {
-    header(header: "Location: " . $location);
+    header( "Location: " . $location);
     exit;
 }
 
