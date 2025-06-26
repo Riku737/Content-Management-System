@@ -47,14 +47,8 @@ $pages_set = find_pages_by_subject_id($id);
 <div class="section_show">
 
     <div class="section_heading_button">
-        <div class="section_heading_button_left">
-            <h2>Pages</h2>
-        </div>  
-        <div class="section_heading_button_right">
-            <div class="actions">
-                <a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php?subject_id=' . h(u($subject['id'])));?>">+ Add page</a>
-            </div>
-        </div>    
+        <h2>Pages</h2>
+        <a class="button_primary action" href="<?php echo url_for('/staff/pages/new.php?subject_id=' . h(u($subject['id'])));?>">+ Add page</a>
     </div>
 
     <table class="list section_attributes pages_table">

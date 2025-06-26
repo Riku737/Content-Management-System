@@ -14,7 +14,7 @@
     --button_pri_hover: #7b0016;
 
     --main_font: Inter, Poppins, Arial, Helvetica, sans-serif;
-    --heading_font: Poppins;
+    --heading_font: Poppins, Arial, Helvetica, sans-serif;
 }
 
 
@@ -29,9 +29,11 @@ h1, h2, h3, h4, h5, h6, th {
     font-family: var(--heading_font);
 }
 
-p {
+p, a {
+    font-family: var(--main_font);
     color: var(--paragraph_color);
 }
+
 
 
 /* NAVIGATION */

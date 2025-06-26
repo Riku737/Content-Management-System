@@ -44,7 +44,7 @@ include(SHARED_PATH . '/staff_navigation.php');
     </table>
 
     <div id="section_button">
-        <a href="<?php echo url_for('/staff/admins/index.php');?>" class="button_primary">Back to list</a>
+        <a href="<?php echo url_for('/staff/admins/index.php');?>" class="button_secondary">Back to list</a>
     </div>
 
 

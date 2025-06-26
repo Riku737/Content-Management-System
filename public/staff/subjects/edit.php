@@ -13,6 +13,8 @@ if(!isset(($_GET['id']))) {
 }
 $id = $_GET['id'];
 
+$subject = find_subject_by_id($id);
+
 if (is_post_request()) {
 
 
@@ -48,15 +50,13 @@ if (is_post_request()) {
     $result = update_subject($subject);
     if ($result === true) {
         // redirect_to(url_for('/staff/subjects/show.php?id=' . $id));
-        $_SESSION['message'] = 'The subject was edited successfully.';
+        $_SESSION['message'] = $subject['menu_name'] . ' subject was edited successfully.';
         redirect_to(url_for('/staff/subjects/index.php'));
     } else {
         $errors = $result;
         // var_dump($errors); // Debugging
     }
 
-} else {
-    $subject = find_subject_by_id($id);
 }
 
 $subject_set = find_all_subjects();

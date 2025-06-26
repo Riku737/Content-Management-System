@@ -14,10 +14,8 @@ $subject = find_subject_by_id($id);
 if(is_post_request()) {
     $result = delete_subject($id);
     $result = delete_subject_pages($id);
-    $_SESSION['message'] = 'The subject was deleted successfully.';
+    $_SESSION['message'] = $subject['menu_name'] . ' subject was deleted successfully.';
     redirect_to(url_for('/staff/subjects/index.php'));
-} else {
-    $subject = find_subject_by_id($id);
 }
 ?>
 

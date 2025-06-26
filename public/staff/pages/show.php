@@ -20,7 +20,9 @@ $subject = find_subject_by_id($page['subject_id']);
     <div class="bread_crumb">
         <a href="<?php echo url_for('/staff/index.php')?>">Staff</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/pages/index.php')?>">Pages</a>
+        <a href="<?php echo url_for(script_path: '/staff/subjects/index.php')?>">Subjects</a>
+        <p>/</p>
+        <a href="<?php echo url_for(script_path: '/staff/subjects/show.php?id=' . h(u($id)))?>"><?php echo h($subject['menu_name']);?></a>
         <p>/</p>
         <p><?php echo h($page['menu_name']);?></p>
     </div>

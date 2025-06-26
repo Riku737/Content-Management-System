@@ -6,6 +6,8 @@ require_once('../../../private/initialize.php');
 
 require_login();
 
+$subject_id = $_GET['subject_id'];
+
 if (is_post_request()) {
     $page = [];
     $page['subject_id'] = $_POST['subject_id'] ?? '';
@@ -25,16 +27,15 @@ if (is_post_request()) {
 
 } else {
     $page = [];
-    $page['subject_id'] = $_GET['subject_id'] ?? '1';
+    $page['subject_id'] = $subject_id ?? '1';
     $page['menu_name'] = '';
     $page['position'] = '';
     $page['visible'] = '';
     $page['content'] = '';
 }
 
-$page_set = find_all_pages();
-$page_count = mysqli_num_rows($page_set) + 1;
-mysqli_free_result($page_set);
+$page_count = count_pages_by_subject_id($page['subject_id']) + 1;
+$subject = find_subject_by_id($subject_id);
 
 $page_title = 'Create Page'; 
 include(SHARED_PATH . '/staff_navigation.php');
@@ -47,7 +48,9 @@ echo display_errors($errors)
     <div class="bread_crumb">
         <a href="<?php echo url_for('/staff/index.php')?>">Staff</a>
         <p>/</p>
-        <a href="<?php echo url_for('/staff/pages/index.php')?>">Pages</a>
+        <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
+        <p>/</p>
+        <a href="<?php echo url_for(script_path: '/staff/subjects/show.php?id=' . h(u($subject_id)))?>"><?php echo h($subject['menu_name']);?></a>
         <p>/</p>
         <p>Create New Page</p>
     </div>
@@ -62,11 +65,12 @@ echo display_errors($errors)
                     <?php
                         $subject_set = find_all_subjects();
                         while($subject = mysqli_fetch_assoc($subject_set)) {
-                            echo "<option value=\"" . h($subject['id']) . "\"";
+                            // echo "<option value=\"" . h($subject['id']) . "\"";
                             if ($page["subject_id"] == $subject['id']) {
-                                echo " selected";
+                                echo "<option value=\"" . h($subject['id']) . "\"" . " selected >" . h($subject['menu_name']) . "</option>";
+                                // echo " selected";
                             }
-                            echo ">" . h($subject['menu_name']) . "</option>";
+                            // echo ">" . h($subject['menu_name']) . "</option>";
                         }
                         mysqli_free_result($subject_set);
                     ?>

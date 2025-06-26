@@ -74,15 +74,15 @@
     border-bottom: none;
 }
 
-.pages_table td:nth-child(5), td:nth-child(6), td:nth-child(7) {
+/* .pages_table td:nth-child(5), td:nth-child(6), td:nth-child(7) {
     text-align: right;
-}
+} */
 
 .pages_table td {
     color: var(--paragraph_color);
 }
 
-.pages_table th {
+.list th {
     align-content: start;
 }
 
@@ -111,20 +111,13 @@
 }
 
 .section_heading_button {
-    display: flex;
     width: 100%;
     margin-bottom: 16px;
 }
-.section_heading_button_left {
-    width: 50%;   
-}
 
-.section_heading_button_right {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
+.section_heading_button h2 {
+    margin-bottom: 8px;
 }
-
 
 /* Status Message */
 .message_success {

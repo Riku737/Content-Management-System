@@ -13,8 +13,10 @@ $page = find_page_by_id($id);
 if(is_post_request()) {
     $result = delete_page($id);
     $_SESSION['message'] = $page['menu_name'] . ' page was deleted successfully.';
-    redirect_to(url_for('/staff/subjects/index.php?id' . h(u($page['subject_id']))));
+    redirect_to(url_for('/staff/subjects/show.php?id=' . h(u($page['subject_id']))));
 } 
+
+$subject = find_subject_by_id($page['subject_id']);
 
 $page_title = 'Delete Page';
 include(SHARED_PATH . '/staff_navigation.php');
@@ -24,9 +26,11 @@ include(SHARED_PATH . '/staff_navigation.php');
 <div class="section_form" id="content">
 
     <div class="bread_crumb">
-        <a href="<?php echo url_for(script_path: '/staff/index.php')?>">Staff</a>
+        <a href="<?php echo url_for('/staff/index.php')?>">Staff</a>
         <p>/</p>
-        <a href="<?php echo url_for(script_path: '/staff/pages/index.php')?>">Pages</a>
+        <a href="<?php echo url_for('/staff/subjects/index.php')?>">Subjects</a>
+        <p>/</p>
+        <a href="<?php echo url_for(script_path: '/staff/subjects/show.php?id=' . h(u($id)))?>"><?php echo h($subject['menu_name']);?></a>
         <p>/</p>
         <p><?php echo h($page['menu_name'])?></p>
     </div>
