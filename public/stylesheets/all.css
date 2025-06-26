@@ -250,3 +250,25 @@ footer {
     width: 1080px;
     margin: auto;
 }
+
+
+/* ERRORS */
+
+.message_error {
+    background-color: #6d7983;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    padding: 32px;
+    color: #ffff;
+    display: flex;
+    gap: 8px;
+}
+
+.message_error p {
+    color: #ffff;
+}
+
+.input_short_form_error   {
+    outline: 1px solid #6d7983;
+    border-radius: 8px;
+}

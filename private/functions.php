@@ -81,7 +81,7 @@ function display_greeting() {
     } else if ($time < 24) {
         echo "Good Evening, ";
     }
-    echo $_SESSION['username'] ?? '';
+    echo $_SESSION['first_name']  . " ". $_SESSION['last_name'] ?? '';
 }
 
 function display_errors($errors=array()) {

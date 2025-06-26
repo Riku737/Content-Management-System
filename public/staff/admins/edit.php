@@ -20,7 +20,7 @@ if (is_post_request())
     $admin['password'] = $_POST['password'] ?? '';
     $admin['confirm_password'] = $_POST['confirm_password'] ?? '';
 
-    $result = insert_admin($admin);
+    $result = update_admin($admin);
     if($result === true) 
     {
         $_SESSION['message'] = 'Admin updated.';
@@ -76,11 +76,11 @@ echo display_errors($errors);
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Password</h4>
-                <input class="input_short_form" type="password" name="password" placeholder="Password" value="<?php echo h($admin['hashed_password']); ?>" />
+                <input class="input_short_form" type="password" name="password" placeholder="Password" value="" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Confirm Password</h4>
-                <input class="input_short_form" type="password" name="confirm_password" placeholder="Confirm password" value="<?php echo h($admin['hashed_password']); ?>" />
+                <input class="input_short_form" type="password" name="confirm_password" placeholder="Confirm password" value="" />
                 <p>Passwords should at least be 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.</p>
             </div>
             <div id="section_button">

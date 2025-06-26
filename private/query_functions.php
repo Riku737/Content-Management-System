@@ -377,6 +377,21 @@ function find_admin_by_id($id) {
     return $admin;
 }
 
+function find_admin_by_username($username) {
+    global $db;
+
+    $sql = "SELECT * FROM admins ";
+    $sql .= "WHERE username='" . db_escape($db, $username) . "' ";
+    $sql .= "LIMIT 1";
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+
+    $admin = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+
+    return $admin;
+}
+
 function validate_admin($admin) {
 
     $errors = [];
@@ -408,7 +423,7 @@ function validate_admin($admin) {
     if (is_blank($admin['username'])) {
         $errors[] = "Username cannot be blank.";
     } else if (!has_length($admin['username'], ['min' => 8, 'max' => 255])) {
-        $errors[] = "Last name must be between 8 and 255 characters.";
+        $errors[] = "Username must be between 8 and 255 characters.";
     } else if (!has_unique_username($admin['username'], $admin['id'] ?? 0)) {
         $errors[] = "Username not allowed. Try another.";
     }
@@ -445,7 +460,7 @@ function insert_admin($admin) {
         return $errors;
     }
 
-    $hashed_password = $admin['password'];
+    $hashed_password = password_hash($admin['password'], PASSWORD_BCRYPT);
 
     global $db;
     $sql = "INSERT INTO admins ";
@@ -477,15 +492,14 @@ function update_admin($admin) {
         return $errors;
     }
 
-    $hashed_password = $admin['password'];
-
+    $hashed_password = password_hash($admin['password'], PASSWORD_BCRYPT);
 
     $sql = "UPDATE admins SET ";
     $sql .= "first_name='" . db_escape($db, $admin['first_name']) . "', ";
     $sql .= "last_name='" . db_escape($db, $admin['last_name']) . "', ";
     $sql .= "email='" . db_escape($db, $admin['email']) . "', ";
-    $sql .= "username='" . db_escape($db, $admin['username']) . "', ";
-    $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "', ";
+    $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "',";
+    $sql .= "username='" . db_escape($db, $admin['username']) . "' ";
     $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
     $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);

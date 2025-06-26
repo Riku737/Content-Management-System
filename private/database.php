@@ -35,6 +35,9 @@ function confirm_result_set($result_set) {
 
 // Alternative: addslashes($string) for php
 // Prevents unsafe SQL injection sent in dynamically
+// Escapes special characters
+// Adds backslashes before characters like ', ", \, and NULL so they are treated as literal characters in SQL 
+// and not part of the SQL syntax
 function db_escape($connection, $string) {
     return mysqli_real_escape_string($connection, $string);
 }

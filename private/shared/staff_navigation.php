@@ -23,7 +23,7 @@ if (!isset($page_title)) {
                 </div>
                 <div class="navigation_right">
                     <a class="button_menu_primary" href="<?php echo url_for('/staff/logout.php')?>">Logout</a>
-                    <p><i class="bi bi-person"></i> Welcome <?php echo $_SESSION['username'] ?? ''; ?></p>
+                    <p><i class="bi bi-person"></i> <?php echo $_SESSION['username'] ?? 'User'; ?></p>
                 </div>
             </div>
 
