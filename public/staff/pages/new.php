@@ -4,6 +4,8 @@
 // because HTTP headers must be sent before any output (including spaces, newlines, or HTML) is sent to the browser
 require_once('../../../private/initialize.php');
 
+require_login();
+
 if (is_post_request()) {
     $page = [];
     $page['subject_id'] = $_POST['subject_id'] ?? '';

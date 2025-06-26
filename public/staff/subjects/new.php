@@ -4,6 +4,8 @@
 // because HTTP headers must be sent before any output (including spaces, newlines, or HTML) is sent to the browser
 require_once('../../../private/initialize.php');
 
+require_login();
+
 // Verifies whether web request is get or post
 // Prevents accidental access to page through modifying URL
 // Redirects to former page

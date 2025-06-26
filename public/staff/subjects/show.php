@@ -1,6 +1,9 @@
 <?php 
 // Runs specified file only once during script execution
 require_once('../../../private/initialize.php');
+
+require_login();
+
 // $id = isset($_GET['id']) ? $_GET['id']: '1'; 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 

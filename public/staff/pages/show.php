@@ -3,6 +3,8 @@
 
 require_once('../../../private/initialize.php');
 
+require_login();
+
 $page_title = 'Show Pages';
 include(SHARED_PATH . '/staff_navigation.php'); 
 

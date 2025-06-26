@@ -2,6 +2,8 @@
 
 require_once('../../../private/initialize.php');
 
+require_login();
+
 $admins_set = find_all_admins();
 $page_title = 'Admins';
 include(SHARED_PATH . '/staff_navigation.php');

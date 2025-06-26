@@ -1,7 +1,10 @@
 <?php 
 // PHP statement runs the specified file only once during script executation. If the file has already been included
 require_once('../../private/initialize.php');
+
 ?>
+
+<?php require_login(); ?>
 
 <?php $page_title = 'Staff Menu';?>
 
