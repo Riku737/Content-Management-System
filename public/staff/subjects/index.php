@@ -19,7 +19,7 @@
 		</div>
 		<h1>Subjects</h1>
 		<div class="actions">
-			<a class="button_primary action" href="<?php echo url_for('/staff/subjects/new.php');?>">+ Add new subject</a>
+			<a class="button_primary action" href="<?php echo url_for('/staff/subjects/new.php');?>">+ Add subject</a>
 		</div>
 
 	</div>
@@ -29,13 +29,15 @@
 		<th style="width:5%">ID</th>
 		<th style="width:10%">Position</th>
 		<th style="width:10%">Visible</th>
-		<th style="width:60%">Name</th>
+		<th style="width:50%">Name</th>
+		<th style="width:10%">Pages</th>
 		<th style="width:5%">&nbsp;</th>
 		<th style="width:5%">&nbsp;</th>
 		<th style="width:5%">&nbsp;</th>
 	</tr>
 
 	<?php while($subject = mysqli_fetch_assoc($subject_set)) { ?>
+		<?php $page_count = count_pages_by_subject_id($subject['id']); ?>
 		<tr>
 		<td><?php echo h($subject['id']); ?></td>
 		<td><?php echo h($subject['position']); ?></td>
@@ -49,6 +51,7 @@
 			?>
 		</td>
 		<td><?php echo h($subject['menu_name']); ?></td>
+		<td><?php echo $page_count; ?></td>
 		<td><a class="link_paragraph action" href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($subject['id'])));?>">View</a></td>
 		<td><a class="link_paragraph action" href="<?php echo url_for('/staff/subjects/edit.php?id=' . h(u($subject['id'])));?>">Edit</a></td>
 		<td><a class="link_paragraph action" href="<?php echo url_for('/staff/subjects/delete.php?id=' . h(u($subject['id'])));?>">Delete</a></td>

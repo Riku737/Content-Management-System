@@ -21,7 +21,7 @@ include(SHARED_PATH . '/staff_navigation.php');
 		</div>
 		<h1>Admins</h1>
 		<div class="actions">
-			<a class="button_primary action" href="<?php echo url_for('/staff/admins/new.php');?>">+ Add new admin</a>
+			<a class="button_primary action" href="<?php echo url_for('/staff/admins/new.php');?>">+ Add admin</a>
 		</div>
 
 	</div>

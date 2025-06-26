@@ -74,15 +74,15 @@
     border-bottom: none;
 }
 
-.list td:nth-child(5), td:nth-child(6), td:nth-child(7) {
+.pages_table td:nth-child(5), td:nth-child(6), td:nth-child(7) {
     text-align: right;
 }
 
-.list td {
+.pages_table td {
     color: var(--paragraph_color);
 }
 
-.list th {
+.pages_table th {
     align-content: start;
 }
 

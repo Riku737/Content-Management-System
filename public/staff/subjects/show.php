@@ -57,7 +57,7 @@ $pages_set = find_pages_by_subject_id($id);
         </div>    
     </div>
 
-    <table class="list section_attributes">
+    <table class="list section_attributes pages_table">
 		<tr>
 			<th style="width:5%">ID</th>
 			<th style="width:10%">Position</th>
