@@ -150,7 +150,7 @@ function has_unique_username($username, $current_id) {
 	$admin_count = mysqli_num_rows($result);
 	mysqli_free_result($result);
 
-	return $admin_count == 0;
+	return $admin_count === 0;
 }
 
 ?>

@@ -41,8 +41,7 @@ function validate_subject($subject) {
     // Database can only hold up to 255 characters long
     if (is_blank($subject['menu_name'])) {
         $errors[] = "Name cannot be blank.";
-    }
-    if (!has_length($subject['menu_name'], ['min' => 2, 'max' => 255])) {
+    } else if (!has_length($subject['menu_name'], ['min' => 2, 'max' => 255])) {
         $errors[] = "Name must be between 2 and 255 characters.";
     }
 
@@ -50,8 +49,7 @@ function validate_subject($subject) {
     $position_int = (int) $subject['position'];
     if ($position_int <= 0) {
         $errors[] = "Position must be greater than zero.";
-    }
-    if ($position_int > 999) {
+    } else if ($position_int > 999) {
         $errors[] = "Position must be less than 999.";
     }
 
@@ -215,8 +213,7 @@ function validate_pages($page) {
     // menu name
     if (is_blank($page['menu_name'])) {
         $errors[] = "Name cannot be blank.";
-    }
-    if (!has_length($page['menu_name'], ['min' => 2, 'max' => 255])) {
+    } else if (!has_length($page['menu_name'], ['min' => 2, 'max' => 255])) {
         $errors[] = "Name must be between 2 and 255 characters.";
     }
 
@@ -224,8 +221,7 @@ function validate_pages($page) {
     $position_int = (int) $page['position'];
     if ($position_int <= 0) {
         $errors[] = "Position must be greater than zero.";
-    }
-    if ($position_int > 999) {
+    } else if ($position_int > 999) {
         $errors[] = "Position must be less than 999.";
     }
 
@@ -444,6 +440,7 @@ function validate_admin($admin) {
 }
 
 function insert_admin($admin) {
+    $errors = validate_admin($admin);
     if (!empty($errors)) {
         return $errors;
     }
@@ -504,13 +501,12 @@ function update_admin($admin) {
 
 }
 
-function delete_admin($admin) {
+function delete_admin($id) {
     global $db;
     
     $sql = "DELETE FROM admins ";
-    $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
-    $sql .= "LIMIT 1"; 
-
+    $sql .= "WHERE id='" . db_escape($db, $id) . "' ";
+    $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);
     
     // For DELETE statements, $result is true/false

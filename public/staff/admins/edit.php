@@ -23,9 +23,8 @@ if (is_post_request())
     $result = insert_admin($admin);
     if($result === true) 
     {
-        $new_id = mysqli_insert_id($db);
-        $_SESSION['message'] = 'Admin created.';
-        redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
+        $_SESSION['message'] = 'Admin updated.';
+        redirect_to(url_for('/staff/admins/show.php?id=' . $id));
     }
     else 
     {
@@ -37,7 +36,7 @@ else
     $admin = find_admin_by_id($id);
 }
 
-$page_title = 'Edit Page';
+$page_title = 'Edit Admin';
 
 include(SHARED_PATH . '/staff_navigation.php');
 
@@ -61,27 +60,27 @@ echo display_errors($errors);
         <form class="section_form_fields" action="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($id)))?>" method="post">
             <div class="<?php echo input_errors($errors)?>">
                 <h4>First Name</h4>
-                <input class="input_short_form" type="text" name="first_name" placeholder="Enter first name in here" value="<?php echo h($admin['first_name']); ?>" />
+                <input class="input_short_form" type="text" name="first_name" placeholder="First name" value="<?php echo h($admin['first_name']); ?>" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Last Name</h4>
-                <input class="input_short_form" type="text" name="last_name" placeholder="Enter last name in here" value="<?php echo h($admin['last_name']); ?>" />
+                <input class="input_short_form" type="text" name="last_name" placeholder="Last name" value="<?php echo h($admin['last_name']); ?>" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Email</h4>
-                <input class="input_short_form" type="text" name="email" placeholder="Enter email in here" value="<?php echo h($admin['email']); ?>" />
+                <input class="input_short_form" type="text" name="email" placeholder="Email" value="<?php echo h($admin['email']); ?>" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Username</h4>
-                <input class="input_short_form" type="text" name="username" placeholder="Enter username in here" value="<?php echo h($admin['username']); ?>" />
+                <input class="input_short_form" type="text" name="username" placeholder="Username" value="<?php echo h($admin['username']); ?>" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Password</h4>
-                <input class="input_short_form" type="password" name="password" placeholder="Enter password in here" value="<?php echo h($admin['hashed_password']); ?>" />
+                <input class="input_short_form" type="password" name="password" placeholder="Password" value="<?php echo h($admin['hashed_password']); ?>" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Confirm Password</h4>
-                <input class="input_short_form" type="password" name="confirmed_password" placeholder="Enter password in here" value="<?php echo h($admin['hashed_password']); ?>" />
+                <input class="input_short_form" type="password" name="confirm_password" placeholder="Confirm password" value="<?php echo h($admin['hashed_password']); ?>" />
                 <p>Passwords should at least be 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.</p>
             </div>
             <div id="section_button">

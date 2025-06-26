@@ -27,7 +27,7 @@ if (is_post_request()) {
     $admin['last_name'] = '';
     $admin['email'] = '';
     $admin['username'] = '';
-    $admin['hashed_password'] = '';
+    $admin['confirm_password'] = '';
 }
 
 $page_title = 'Create Admin';
@@ -70,11 +70,11 @@ include(SHARED_PATH . '/staff_navigation.php');
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Password</h4>
-                <input class="input_short_form" type="password" name="password" placeholder="Enter password in here" value="<?php echo h($admin['hashed_password']); ?>" />
+                <input class="input_short_form" type="password" name="password" placeholder="Enter password in here" value="" />
             </div>
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Confirm Password</h4>
-                <input class="input_short_form" type="password" name="confirmed_password" placeholder="Enter password in here" value="<?php echo h($admin['hashed_password']); ?>" />
+                <input class="input_short_form" type="password" name="confirm_password" placeholder="Enter password in here" value="" />
                 <p>Passwords should at least be 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.</p>
             </div>
             <div id="section_button">
