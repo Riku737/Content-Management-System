@@ -51,7 +51,6 @@
     border-radius: 8px;
     border-collapse: separate;
     border-spacing: 0;
-    overflow: hidden;
 }
 
 /* th {
@@ -84,6 +83,10 @@
 
 .list th {
     align-content: start;
+}
+
+.list td {
+    color: var(--paragraph_color);
 }
 
 .link_paragraph {

@@ -10,6 +10,7 @@ if (!isset($page_title)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css')?>"/>
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css')?>"/>
+        <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/smallscreen.css')?>"/>
         <script src="<?php echo url_for('/scripts/staff.js')?>"></script>
         <title>Riki Bank - <?php echo h($page_title); ?></title>
     </head>

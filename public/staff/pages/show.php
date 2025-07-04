@@ -51,6 +51,13 @@ $subject = find_subject_by_id($page['subject_id']);
             <td><?php echo h($page['content']);?></td>
         </tr>
     </table>
+
+    <div class="preview_box" id="content">
+        <?php         
+        $allowed_tags = '<h1><h2><p><br><strong><em><ul><li><a>';
+        echo strip_tags($page['content'], $allowed_tags);
+        ?>
+    </div>
     
     <div id="section_button">
         <a class="button_primary" href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true'); ?>" target="_blank">Preview page</a>

@@ -10,6 +10,7 @@ if (!isset($page_title)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/public.css')?>"/>
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css')?>"/>
+        <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/smallscreen.css')?>"/>
         <title>Riki Bank - <?php echo h($page_title);?> <?php if (isset($preview) && $preview) { echo ' [PREVIEW]'; } ?></title>
     </head>
     <body>

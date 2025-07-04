@@ -223,7 +223,6 @@ h1 {
     color: black;
 }
 
-
 .section_form_fields {
     display: flex;
     flex-direction: column;
@@ -236,6 +235,13 @@ h1 {
 
 .section_form_fields div {
     width: 100%;
+}
+
+.preview_box {
+    border: 1px solid var(--border_color);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 32px;
 }
 
 
@@ -273,4 +279,42 @@ footer {
 .input_short_form_error   {
     outline: 1px solid #6d7983;
     border-radius: 8px;
+}
+
+
+
+/* PAGES */
+
+img {
+    border-radius: 8px;
+}
+
+#hero-image img {
+    width: 100%;
+    height: fit-content;
+}
+
+#hero-image {
+    margin-bottom: 32px;
+}
+
+#content h1 {
+    margin-bottom: 16px;
+}
+
+#content h2 {
+    margin-bottom: 8px;
+}
+
+#content p {
+    margin-bottom: 16px;
+}
+
+#content ul {
+    padding-left: 32px;
+    margin-bottom: 12px;
+}
+
+#content li {
+    margin-bottom: 4px;
 }

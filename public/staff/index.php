@@ -16,7 +16,7 @@ require_once('../../private/initialize.php');
         <p>Staff</p>
     </div>
     <h1><?php display_greeting(); ?></h1>
-    <nav class="container_link">
+    <div class="container_link">
         <div class="item_link">
             <h2>Subjects</h2>
             <p>Access subjects</p>
@@ -32,7 +32,7 @@ require_once('../../private/initialize.php');
             <p>Access admins</p>
             <a class="button_primary" href="<?php echo url_for('/staff/admins/index.php')?>">Manage</a>
         </div>
-    </nav>
+    </div>
 
 </div>
 

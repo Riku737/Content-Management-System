@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     }
     
     $subject_id = $page['subject_id'];
-    $subject = find_subject_by_id($subject_id, ['visible' => $visible]);
+    $subject = find_subject_by_id($subject_id);
     if(!$subject) {
         redirect_to(url_for('/index.php'));
     }
