@@ -1,6 +1,10 @@
         <footer>
             <div class="section_footer">
                 &copy; <?php echo date('Y'); ?> Website
+                <br>
+                <small>
+                    Disclaimer: This website and company are entirely fictitious and created solely for learning and educational purposes.
+                </small>
             </div>
         </footer>
 
