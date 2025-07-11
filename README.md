@@ -1,3 +1,5 @@
+![Screenshot of prototype](cms_thumbnail.png)
+
 # Content Management System
 
 A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS**.
@@ -15,6 +17,8 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 - Database-driven content using MySQL
 - Secure database queries with input escaping
 - Organized code structure with reusable PHP functions
+
+![Screenshot of database](database_schema.png)
 
 ## Setup Instructions
 
