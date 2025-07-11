@@ -26,6 +26,7 @@ if (is_post_request())
     if($result === true) 
     {
         $_SESSION['message'] = 'Admin updated.';
+        $_SESSION['message'] = 'Admin updated.';
         redirect_to(url_for('/staff/admins/show.php?id=' . $id));
     }
     else 
@@ -83,7 +84,7 @@ echo display_errors($errors);
             <div class="<?php echo input_errors($errors)?>">
                 <h4>Confirm Password</h4>
                 <input class="input_short_form" type="password" name="confirm_password" placeholder="Confirm password" value="" />
-                <p>Passwords should at least be 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.</p>
+                <p style="margin-top: 4px; width: 50%;" ><i>Passwords should at least be 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.</i></p>
             </div>
             <div id="section_button">
                 <input class="button_primary" type="submit" value="Save edit" />

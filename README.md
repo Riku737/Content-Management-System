@@ -20,7 +20,7 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/Content-Management-System.git
+   git clone https://github.com/Riku737/Content-Management-System.git
    ```
 
 2. **Move the project to your web server directory**
@@ -33,15 +33,18 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
    - Open phpMyAdmin at [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
    - Create a new database (e.g., `cms`).
    - Import the provided example SQL file from the repository to set up tables and sample data.
+   - **Note:** An example admin user is set up in the sample SQL schema:
+     - **Username:** `QuantumDoe42`
+     - **Password:** `4WDtxY_GXxi:hJ2`
 
 5. **Configure Database Credentials**
    - Edit the database configuration file (in `private/db_credentials.php`).
    - Set your database name, username, and password:
      ```php
-     define("DB_SERVER", "");
-     define("DB_USER", "");
+     define("DB_SERVER", "localhost");
+     define("DB_USER", "root");
      define("DB_PASS", "");
-     define("DB_NAME", "");
+     define("DB_NAME", "cms_platform");
      ```
 
 6. **Access the Application**
@@ -68,4 +71,3 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 - **PHP** — Server-side scripting
 - **MySQL** — Database
 - **HTML/CSS** — Front-end structure and styling
-- **JavaScript** — Front-end interactivity
