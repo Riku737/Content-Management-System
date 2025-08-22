@@ -1,4 +1,4 @@
-![Screenshot of prototype](cms_thumbnail.png)
+![Screenshot of prototype](banner.png)
 
 # Corporate Business Website
 
@@ -8,7 +8,7 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 
 -   User authentication and session management
 -   Admin dashboard for managing content
--   CRUD (Create, Read, Update, Delete) operations for subjects and pages
+-   CRUD (Create, Read, Update, Delete) operations for subjects, pages, and admins
 -   Dynamic navigation menus based on database content
 -   Flash messaging for user feedback (success/error notifications)
 -   Form validation and error handling
@@ -18,7 +18,8 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 -   Secure database queries with input escaping
 -   Organized code structure with reusable PHP functions
 
-![Screenshot of database](database_schema.png)
+![Screenshot of app](thumbnail_1.png)
+![Screenshot of app](thumbnail_2.png)
 
 ## Setup Instructions
 
