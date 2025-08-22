@@ -1,8 +1,14 @@
 ![Screenshot of prototype](banner.png)
+![GitHub Created At](https://img.shields.io/github/created-at/riku737/content-management-system)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/riku737/content-management-system)
+![GitHub last commit](https://img.shields.io/github/last-commit/riku737/content-management-system)
+![GitHub top language](https://img.shields.io/github/languages/top/riku737/content-management-system)
+
+
 
 # Corporate Business Website
 
-A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS** for.
+A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS** for a fictional big tech company named Techno1ogy.
 
 ## Features
 
