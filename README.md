@@ -13,13 +13,13 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 -   Flash messaging for user feedback (success/error notifications)
 -   Form validation and error handling
 -   Responsive design with custom CSS
--   Language preference selection with cookies
 -   Database-driven content using MySQL
 -   Secure database queries with input escaping
 -   Organized code structure with reusable PHP functions
 
 ![Screenshot of app](thumbnail_1.png)
 ![Screenshot of app](thumbnail_2.png)
+![Screenshot of app](thumbnail_3.png)
 
 ## Setup Instructions
 
