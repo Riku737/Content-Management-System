@@ -4,8 +4,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/riku737/content-management-system)
 ![GitHub top language](https://img.shields.io/github/languages/top/riku737/content-management-system)
 
-
-
 # Corporate Business Website
 
 A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS** for a fictional big tech company named Techno1ogy.
@@ -88,3 +86,12 @@ A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**
 -   **PHP** — Server-side scripting
 -   **MySQL** — Database
 -   **HTML/CSS** — Front-end structure and styling
+
+## Disclaimer
+
+This project was completed by following along with the LinkedIn Learning courses:
+
+-   _PHP with MySQL Essential Training: 1 The Basics_
+-   _PHP with MySQL Essential Training: 2 Build a CMS_
+
+The code and structure closely reflect the instructional content provided in these courses, and the project was developed as part of a personal learning exercise.
