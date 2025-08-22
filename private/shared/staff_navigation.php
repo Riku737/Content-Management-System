@@ -12,7 +12,7 @@ if (!isset($page_title)) {
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css')?>"/>
         <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/smallscreen.css')?>"/>
         <script src="<?php echo url_for('/scripts/staff.js')?>"></script>
-        <title>Riki Bank - <?php echo h($page_title); ?></title>
+        <title>Techno1ology - <?php echo h($page_title); ?></title>
     </head>
     <body>
 
@@ -34,7 +34,7 @@ if (!isset($page_title)) {
 
             <div class="navigation_bar">
                 <div class="navigation_left">
-                    <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Riki Bank</a></h3>
+                    <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Techno1ology</a></h3>
                 </div>
                 <div class="navigation_right">
                     <a class="link_menu" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
