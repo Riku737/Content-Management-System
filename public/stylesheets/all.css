@@ -81,6 +81,7 @@ p, a {
     color: var(--main_color);
     transition: 100ms;
     font: var(--main_font);
+    font-weight: 500;
 }
 
 .button_menu_primary:hover {
@@ -98,7 +99,7 @@ p, a {
     border: none;
     display: inline-block;
     font: var(--main_font);
-    /* font-weight: bold */
+    font-weight: 500;
 }
 
 .button_primary:hover {
@@ -118,6 +119,7 @@ p, a {
     display: inline-block;
     font: var(--main_font);
     /* font-weight: bold; */
+    font-weight: 500;
 }
 
 .button_secondary:hover {

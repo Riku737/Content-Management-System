@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once('../../private/initialize.php');
 
 $errors = [];
@@ -9,7 +9,7 @@ if (is_post_request()) {
 
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    
+
     // Validations
     if (is_blank($username)) {
         $errors[] = "Username cannot be blank.";
@@ -20,10 +20,10 @@ if (is_post_request()) {
 
     // If no errors, try to login
     if (empty($errors)) {
-        
+
         $login_failure_message = "Log in was unsuccessful.";
         $admin = find_admin_by_username($username);
-        
+
         if ($admin) { // If find_admin_by_username returns a set
             if (password_verify($password, $admin['hashed_password'])) {
                 // builtin php function does all the heavy lifting
@@ -34,21 +34,18 @@ if (is_post_request()) {
                 // no username found, but password doesn't match
                 $errors[] = $login_failure_message;
             }
-
         } else {
             // No username found
             $errors[] = $login_failure_message;
         }
-
     }
-
 }
 
 ?>
 
 <?php $page_title = 'Log in'; ?>
 <?php include(SHARED_PATH . '/public_navigation.php'); ?>
-<?php echo display_errors($errors);?>
+<?php echo display_errors($errors); ?>
 
 <div class="section_content">
 

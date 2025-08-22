@@ -5,45 +5,47 @@ if (!isset($page_title)) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css')?>"/>
-        <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css')?>"/>
-        <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/smallscreen.css')?>"/>
-        <script src="<?php echo url_for('/scripts/staff.js')?>"></script>
-        <title>Techno1ology - <?php echo h($page_title); ?></title>
-    </head>
-    <body>
 
-        <div class="navigation_banner">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css') ?>" />
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/all.css') ?>" />
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/smallscreen.css') ?>" />
+    <script src="<?php echo url_for('/scripts/staff.js') ?>"></script>
+    <title>Techno1ogy - <?php echo h($page_title); ?></title>
+</head>
 
-            <div class="navigation_banner_content">
-                <div class="navigation_left">
-                    <h3>Admin</h3>
-                </div>
-                <div class="navigation_right">
-                    <a class="button_menu_primary" href="<?php echo url_for('/staff/logout.php')?>">Logout</a>
-                    <p><i class="bi bi-person"></i> <?php echo $_SESSION['username'] ?? 'User'; ?></p>
-                </div>
+<body>
+
+    <div class="navigation_banner">
+
+        <div class="navigation_banner_content">
+            <div class="navigation_left">
+                <h3>Admin</h3>
             </div>
-
+            <div class="navigation_right">
+                <a class="button_menu_primary" href="<?php echo url_for('/staff/logout.php') ?>">Logout</a>
+                <p><i class="bi bi-person"></i> <?php echo $_SESSION['username'] ?? 'User'; ?></p>
+            </div>
         </div>
 
-        <div class="navigation_background">
+    </div>
 
-            <div class="navigation_bar">
-                <div class="navigation_left">
-                    <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php');?>">Techno1ology</a></h3>
-                </div>
-                <div class="navigation_right">
-                    <a class="link_menu" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
-                    <!-- <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a> -->
-                    <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a>
-                    <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>
-                </div>
+    <div class="navigation_background">
+
+        <div class="navigation_bar">
+            <div class="navigation_left">
+                <h3><a class="navigation_name" href="<?php echo url_for('/staff/index.php'); ?>">Techno1ogy</a></h3>
             </div>
-        
+            <div class="navigation_right">
+                <a class="link_menu" href="<?php echo url_for('/staff/admins/index.php'); ?>">Admins</a>
+                <!-- <a class="link_menu" href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a> -->
+                <a class="link_menu" href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a>
+                <a class="link_menu" href="<?php echo url_for('/staff/index.php'); ?>">Home</a>
+            </div>
         </div>
 
-        <?php echo display_session_message(); ?>
+    </div>
+
+    <?php echo display_session_message(); ?>
