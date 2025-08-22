@@ -8,7 +8,7 @@
 
 # Corporate Business Website
 
-A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS** for.
+A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS** for a fictional big tech company named Techno1ogy.
 
 ## Features
 
