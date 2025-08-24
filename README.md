@@ -3,6 +3,9 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/riku737/content-management-system)
 ![GitHub last commit](https://img.shields.io/github/last-commit/riku737/content-management-system)
 ![GitHub top language](https://img.shields.io/github/languages/top/riku737/content-management-system)
+[![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
+[![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff)](#)
+[![PHP](https://img.shields.io/badge/php-%23777BB4.svg?&logo=php&logoColor=white)](#)
 
 # Corporate Business Website
 
