@@ -11,6 +11,8 @@
 
 A simple content management system (CMS) built with **PHP**, **MySQL**, **HTML**, and **CSS** for a fictional big tech company named Techno1ogy.
 
+This app was developed alongside the *PHP with MySQL Essential Training: 1 The Basics* and *PHP with MySQL Essential Training: 2 Build a CMS* courses on LinkedIn Learning.
+
 ## Features
 
 -   User authentication and session management
