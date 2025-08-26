@@ -96,7 +96,7 @@ This app was developed alongside the *PHP with MySQL Essential Training: 1 The B
 
 This project was completed by following along with the LinkedIn Learning courses:
 
--   _PHP with MySQL Essential Training: 1 The Basics_
--   _PHP with MySQL Essential Training: 2 Build a CMS_
+-   [_PHP with MySQL Essential Training: 1 The Basics_](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics)
+-   [_PHP with MySQL Essential Training: 2 Build a CMS_](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms)
 
 The code and structure closely reflect the instructional content provided in these courses, and the project was developed as part of a personal learning exercise.
